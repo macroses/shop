@@ -1,0 +1,20 @@
+@import 'customReset';
+
+:root {
+  --c-text: #a9a9a9;
+  --c-text-dark: #444;
+  --c-bg: #caebf2;
+  --c-accent: #ff3b3f;
+  --c-neutral: #efefef;
+  --c-white: #fff;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+}
+
+.container {
+  max-width: 1232px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

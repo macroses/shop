@@ -1,30 +1,34 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="wrapper">
+    <v-header></v-header>
+    <main>
+      <router-view/>
+    </main>
+    <footer>3123123</footer>
   </div>
-  <router-view/>
+
 </template>
 
+<script>
+import VHeader from "@/components/VHeader";
+export default {
+  components: {VHeader}
+}
+</script>
+
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-#nav {
-  padding: 30px;
+main {
+  flex: 1 0 auto;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+footer {
+  flex: 0 0 auto;
 }
 </style>
