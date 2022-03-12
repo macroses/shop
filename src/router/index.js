@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Favorite from "@/views/Favorite";
 import Auth from "@/views/Auth";
 import StorePage from "@/views/StorePage";
+import VCategoryItem from "@/components/VCategoryItem";
 
 const routes = [
   {
@@ -20,6 +21,10 @@ const routes = [
   {
     path: '/store-page',
     component: StorePage
+  },
+  {
+    path: '/category/:id',
+    component: VCategoryItem
   }
 ]
 

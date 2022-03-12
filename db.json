@@ -22,7 +22,9 @@
       "price": "13 990",
       "imgSet": [
         "/goods/1_1_a.webp",
-        "/goods/1_1_b.webp"
+        "/goods/1_1_b.webp",
+        "/goods/1_1_c.webp",
+        "/goods/1_1_d.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -35,6 +37,264 @@
         {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
         {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
         {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
+      ]
+    },
+
+    {
+      "id": 2,
+      "brand": "Xiaomi",
+      "name": "Смартфон Xiaomi Redmi 9A",
+      "title": "ТОП ЗА СВОИ ДЕНЬГИ",
+      "body": "",
+      "price": "72 990",
+      "imgSet": [
+        "/goods/1_2_a.jpg",
+        "/goods/1_2_b.jpg",
+        "/goods/1_2_c.jpg",
+        "/goods/1_2_d.jpg",
+        "/goods/1_2_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["розовый", "белый"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.2"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Xiaomi"]}
+      ]
+    },
+
+    {
+      "id": 3,
+      "brand": "Samsung",
+      "name": "Смартфон Samsung Galaxy Z Flip 3 128GB Green (SM-F711B)",
+      "title": "Свежий взгляд на раскладушку",
+      "body": "Откройте для себя эксклюзивные цвета Galaxy Z Flip3 5G только на Samsung.com.Предложение ограничено!",
+      "price": "89 990",
+      "imgSet": [
+        "/goods/1_3_a.jpg",
+        "/goods/1_3_b.jpg",
+        "/goods/1_3_c.jpg",
+        "/goods/1_3_d.jpg",
+        "/goods/1_3_e.jpg",
+        "/goods/1_3_f.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["золотой", "белый", "серебро"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.7"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
+      ]
+    },
+
+    {
+      "id": 4,
+      "brand": "Xiaomi",
+      "name": "Смартфон Xiaomi Mi 11 256GB Midnight Gray",
+      "title": "Снимайте как режиссер",
+      "body": "Mi 11 создан для любителей кино. Xiaomi объединила выдающиеся технологии с передовым программным обеспечением, чтобы предложить множество креативных и простых в использовании функций видеосъёмки.",
+      "price": "75 990",
+      "imgSet": [
+        "/goods/1_4_a.jpg",
+        "/goods/1_4_b.jpg",
+        "/goods/1_4_c.jpg",
+        "/goods/1_4_d.jpg",
+        "/goods/1_4_e.jpg",
+        "/goods/1_4_f.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["золотой", "серый"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.81"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["256"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Xiaomi"]}
+      ]
+    },
+
+    {
+      "id": 5,
+      "brand": "Huawei",
+      "name": "Смартфон Huawei P Smart 2021 4+128GB Crush Green (PPA-LX1)",
+      "title": "Народная цена",
+      "body": "Huawei делала P Smart 2021, явно прислушиваясь к народным чаяниям, словно бы на основе социологического опроса.",
+      "price": "15 990",
+      "imgSet": [
+        "/goods/1_5_a.jpg",
+        "/goods/1_5_b.jpg",
+        "/goods/1_5_c.jpg",
+        "/goods/1_5_d.jpg",
+        "/goods/1_5_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["золотой", "красный"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.67"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["4"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Huawei"]}
+      ]
+    },
+
+    {
+      "id": 6,
+      "brand": "Huawei",
+      "name": "Смартфон Huawei P40 Pro Silver Frost (ELS-NX9)",
+      "title": "НЕВЕРОЯТНЫЕ ВОЗМОЖНОСТИ ДЛЯ СЪЁМКИ",
+      "body": "Huawei P40 Pro – улучшенная версия флагманского смартфона от известного производителя.  Его 6,58-дюймовый экран, выполненный по технологии OLED, загнут на все грани и торцы корпуса. За счёт этого создаётся ощущение полной безграничности дисплея. Разрешение 2640 х 1200 пикселей и частота обновления 90 Гц обеспечивают безупречную реалистичность изображения.",
+      "price": "64 999",
+      "imgSet": [
+        "/goods/1_6_a.jpg",
+        "/goods/1_6_b.jpg",
+        "/goods/1_6_c.jpg",
+        "/goods/1_6_d.jpg",
+        "/goods/1_6_e.jpg",
+        "/goods/1_6_f.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["серебро", "синий", "белый"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.58"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["256"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["6200"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Huawei"]}
+      ]
+    },
+
+    {
+      "id": 7,
+      "brand": "Apple",
+      "name": "Смартфон Apple iPhone 11 64GB Black (MHDA3RU/A) Apple",
+      "title": "Потрясающей производительностью обладает смартфон APPLE iPhone 11 ",
+      "body": "Корпус модели выполнен из металла, имеющего хорошую устойчивость к внешним повреждениям, а также влаге и пыли. Стильный смартфон APPLE iPhone 11 128Гб, MHDH3RU/A обладает экраном IPS диагональю 6,1 дюйма для отображения яркой, насыщенной цветом картинки в разрешении 1792x828 пикселей. Система камер 12+12 Мп, сочетающая в себе широкоугольную и сверхширокоугольную камеры, отличается большим спектром возможностей, позволяя создавать фотографии высокого качества. Для длительной автономной работы модель имеет ёмкую аккумуляторную батарею.",
+      "price": "64 999",
+      "imgSet": [
+        "/goods/1_7_a.jpg",
+        "/goods/1_7_b.jpg",
+        "/goods/1_7_c.jpg",
+        "/goods/1_7_d.jpg",
+        "/goods/1_7_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.1"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["64"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["3500"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Apple"]}
+      ]
+    },
+
+    {
+      "id": 8,
+      "brand": "Apple",
+      "name": "Смартфон Apple iPhone 12 Pro Max 128GB Pacific Blue (MGDA3RU/A)",
+      "title": "Встречайте iPhone 12 Pro Max",
+      "body": "Это iPhone 12 Pro Max. A14 Bionic, самый быстрый процессор iPhone. Система камер Pro, которая обеспечивает потрясающее качество снимков при слабом освещении. И увеличенный дисплей Super Retina XDR. Это новая эра для iPhone.",
+      "price": "103 390",
+      "imgSet": [
+        "/goods/1_8_a.jpg",
+        "/goods/1_8_b.jpg",
+        "/goods/1_8_c.jpg",
+        "/goods/1_8_d.jpg",
+        "/goods/1_8_e.jpg",
+        "/goods/1_8_f.jpg",
+        "/goods/1_8_g.jpg",
+        "/goods/1_8_h.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["графитовый", "золотой", "серебро", "тихоокеанский синий"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.7"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["16"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4200"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Apple"]}
+      ]
+    },
+
+    {
+      "id": 9,
+      "brand": "Apple",
+      "name": "Смартфон Apple iPhone 11 64GB (PRODUCT)RED (MHDD3RU/A)",
+      "title": "Во-первых, это быстро.",
+      "body": "A14 Bionic, самый быстрый процессор iPhone. Дисплей OLED от края до края. Передняя панель Ceramic Shield, которая в четыре раза снижает риск повреждений дисплея при падении. И Ночной режим на всех камерах. Всё это есть в iPhone 12. В двух размерах.",
+      "price": "69 990",
+      "imgSet": [
+        "/goods/1_9_a.jpg",
+        "/goods/1_9_b.jpg",
+        "/goods/1_9_c.jpg",
+        "/goods/1_9_d.jpg",
+        "/goods/1_9_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["графитовый", "золотой", "красный"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.1"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["16"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4200"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Apple"]}
+      ]
+    },
+
+    {
+      "id": 10,
+      "brand": "Asus",
+      "name": "Смартфон ASUS Zenfone 8 Flip ZS672KS 8+256GB Black (2A022RU)",
+      "title": "Asus Zenfone 8 Flip – смартфон флагманского уровня",
+      "body": "Одно из них – поворотный блок камер, позволяющий делать снимки отличного качества в обычном и фронтальном режимах. В вашем распоряжении – три объектива: 64, 12 и 8 Мп. С ними вы получите как обычные фотографии, яркие и детализированные, так и эффектные панорамы, портреты, селфи и видеоролики.",
+      "price": "69 990",
+      "imgSet": [
+        "/goods/1_10_a.jpg",
+        "/goods/1_10_b.jpg",
+        "/goods/1_10_c.jpg",
+        "/goods/1_10_d.jpg",
+        "/goods/1_10_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.67"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["256"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["12"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4300"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Asus"]}
       ]
     }
   ]

@@ -6,23 +6,11 @@
     </div>
     <transition name="fade">
       <ul class="catalog-list" v-if="isVisible">
-        <li>
-          <router-link to="">Смартфоны и планшеты</router-link>
-        </li>
-        <li>
-          <router-link to="">Ноутбуки и настольные ПК</router-link>
-        </li>
-        <li>
-          <router-link to="">Стиральные машины</router-link>
-        </li>
-        <li>
-          <router-link to="">Холодильники</router-link>
-        </li>
-        <li>
-          <router-link to="">Игры и развлечения</router-link>
-        </li>
-        <li>
-          <router-link to="">Техника для кухни</router-link>
+        <li v-for="categoryItem in loadedCategory" :key="categoryItem.id">
+          <router-link :to="'/category/' + categoryItem.id">
+            <i :class="categoryItem.image"></i>
+            {{ categoryItem.name }}
+          </router-link>
         </li>
       </ul>
     </transition>
@@ -30,11 +18,14 @@
 </template>
 
 <script>
+import Model from "@/api";
+
 export default {
   name: 'v-catalog',
   data() {
     return {
-      isVisible: false
+      isVisible: false,
+      loadedCategory: []
     }
   },
   methods: {
@@ -43,13 +34,15 @@ export default {
     },
     hideCatalog() {
       this.isVisible = false
-    }
+    },
   },
-  mounted() {
+  async mounted() {
+    const categoryList = new Model();
+    this.loadedCategory = await categoryList.loadCategories();
     document.addEventListener('click', this.hideCatalog, true)
   },
-  beforeUnmount() {
-    document.removeEventListener('click', this.hideCatalog)
+  beforeDestroy() {
+    document.removeEventListener('click', this.hideCatalog, true)
   }
 }
 </script>
