@@ -1,35 +1,56 @@
 <template>
   <div class="catalog-wrap">
-    <div class="catalog">
+    <div class="catalog" @click="toggleCatalog">
       <i class="fa-solid fa-bars"></i>
       Каталог
     </div>
-    <ul class="catalog-list">
-      <li>
-        <router-link to="">Смартфоны и планшеты</router-link>
-      </li>
-      <li>
-        <router-link to="">Ноутбуки и настольные ПК</router-link>
-      </li>
-      <li>
-        <router-link to="">Стиральные машины</router-link>
-      </li>
-      <li>
-        <router-link to="">Холодильники</router-link>
-      </li>
-      <li>
-        <router-link to="">Игры и развлечения</router-link>
-      </li>
-      <li>
-        <router-link to="">Техника для кухни</router-link>
-      </li>
-    </ul>
+    <transition name="fade">
+      <ul class="catalog-list" v-if="isVisible">
+        <li>
+          <router-link to="">Смартфоны и планшеты</router-link>
+        </li>
+        <li>
+          <router-link to="">Ноутбуки и настольные ПК</router-link>
+        </li>
+        <li>
+          <router-link to="">Стиральные машины</router-link>
+        </li>
+        <li>
+          <router-link to="">Холодильники</router-link>
+        </li>
+        <li>
+          <router-link to="">Игры и развлечения</router-link>
+        </li>
+        <li>
+          <router-link to="">Техника для кухни</router-link>
+        </li>
+      </ul>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'v-catalog'
+  name: 'v-catalog',
+  data() {
+    return {
+      isVisible: false
+    }
+  },
+  methods: {
+    toggleCatalog() {
+      this.isVisible = !this.isVisible
+    },
+    hideCatalog() {
+      this.isVisible = false
+    }
+  },
+  mounted() {
+    document.addEventListener('click', this.hideCatalog, true)
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.hideCatalog)
+  }
 }
 </script>
 
@@ -59,8 +80,7 @@ export default {
   background-color: var(--c-white);
   top: 100%;
   left: 0;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
 
@@ -74,5 +94,13 @@ export default {
       color: var(--c-white);
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>

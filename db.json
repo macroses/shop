@@ -1,0 +1,41 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "Смартфоны и планшеты",
+      "image": "fa-solid fa-mobile"
+    },
+    {
+      "id": 2,
+      "name": "Ноутбуки и настольные ПК",
+      "image": "fa-solid fa-laptop"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "brand": "Samsung",
+      "name": "Смартфон Samsung Galaxy A12 32GB Black (SM-A125F)",
+      "title": "БОЛЬШОЙ И ЯРКИЙ ЭКРАН",
+      "body": "Большой 6,5-дюймовый HD+ экран с V-образным вырезом для камеры создан для полного погружения в контент. Благодаря поддержке технологии HD+ картинка на Samsung Galaxy A12 яркая и насыщенная.",
+      "price": "13 990",
+      "imgSet": [
+        "/goods/1_1_a.webp",
+        "/goods/1_1_b.webp"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "белый"]},
+        {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.5"]},
+        {"attrId": 3, "attrName": "память", "attrVal": ["32"]},
+        {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["4"]},
+        {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["3500"]},
+        {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
+        {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
+        {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
+      ]
+    }
+  ]
+}
