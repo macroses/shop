@@ -39,7 +39,6 @@
         {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
       ]
     },
-
     {
       "id": 2,
       "categoryId": 1,
@@ -304,6 +303,315 @@
         {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
         {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]},
         {"attrId": 8, "attrName": "бренд", "attrVal": ["Asus"]}
+      ]
+    },
+
+    {
+      "id": 11,
+      "categoryId": 2,
+      "brand": "Huawei",
+      "name": "Ноутбук Huawei MateBook D 15 BoB-WAI9 8+256GB Space Grey",
+      "title": "Удобный, быстрый, легкий. Серый цвет смотрится очень достойно.",
+      "body": "Хороший стильный ноутбук для учебы и работы. Шум вентиляторов либо не слышно, либо в очень ресурсоёмких задачах немного слышно (еле как, совсем не мешает). P.S. Вообще советую рассматривать модели с процессором AMD, но они немного дороже, и немного дефицитные.",
+      "price": "42 990",
+      "imgSet": [
+        "/goods/2_1_a.jpg",
+        "/goods/2_1_b.jpg",
+        "/goods/2_1_c.jpg",
+        "/goods/2_1_d.jpg",
+        "/goods/2_1_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i3 10110U 2.1"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["32"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+        {"attrId": 9, "attrName": "бренд", "attrVal": ["Huawei"]}
+      ]
+    },
+
+    {
+      "id": 12,
+      "categoryId": 2,
+      "brand": "HP",
+      "name": "Ноутбук HP 15s-fq2060ur 3Y1S4EA",
+      "title": "ВЫНОСЛИВЫЙ СПУТНИК",
+      "body": "Для стабильной работы большинства приложений не требуется заоблачная мощность - ноутбук HP 15s-fq2060ur запросто справится с поставленными задачами, позволяя владельцу заниматься будничными делами и отдыхать в свободное время.",
+      "price": "41 990",
+      "imgSet": [
+        "/goods/2_2_a.jpg",
+        "/goods/2_2_b.jpg",
+        "/goods/2_2_c.jpg",
+        "/goods/2_2_d.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["металл"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i3 1115G4 3.0 ГГц"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["256"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+        {"attrId": 9, "attrName": "вес", "attrVal": ["1,79 кг"]},
+        {"attrId": 10, "attrName": "бренд", "attrVal": ["HP"]}
+      ]
+    },
+
+    {
+      "id": 13,
+      "categoryId": 2,
+      "brand": "Asus",
+      "name": "Ноутбук игровой ASUS TUF Gaming F15 FX506LH-HN082T",
+      "title": "ХОД NVIDIA",
+      "body": "Производительный лэптоп делает ставку на видеокарту GeForce GTX 1650 с 4 Гб памяти на борту. Она поддерживает множество современных технологий, включая DirectX 12, и выдаёт стабильный FPS в множестве хитов, включая сетевые шутеры и стратегии. Также создатели разместили в недрах устройства четырёхъядерный процессор Intel Core i5 10300H и 8 Гб оперативной памяти DDR4.",
+      "price": "64 990",
+      "imgSet": [
+        "/goods/2_3_a.jpg",
+        "/goods/2_3_b.jpg",
+        "/goods/2_3_c.jpg",
+        "/goods/2_3_d.jpg",
+        "/goods/2_3_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i5 10300H 2.5 ГГц"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["512"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["16"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+        {"attrId": 9, "attrName": "вес", "attrVal": ["2,3 кг"]},
+        {"attrId": 10, "attrName": "бренд", "attrVal": ["Asus"]}
+      ]
+    },
+
+    {
+      "id": 14,
+      "categoryId": 2,
+      "brand": "Acer",
+      "name": "Ноутбук Acer TravelMate TMB118-M-C6UT NX.VHSER.00E Acer",
+      "title": "Cоздан для применения в школьном классе или институтской аудитории. ",
+      "body": "Мобильный компьютер можно каждый день брать с собой на занятия. Благодаря прорезиненной противоударной рамке, экрану с защитой от давления, и клавиатуре, выдерживающей проливание до 330 мл жидкости, ему не страшно даже неаккуратное обращение.",
+      "price": "15 000",
+      "imgSet": [
+        "/goods/2_4_a.jpg",
+        "/goods/2_4_b.jpg",
+        "/goods/2_4_c.jpg",
+        "/goods/2_4_d.jpg",
+        "/goods/2_4_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Celeron N4120 1.1 ГГц"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["11.6"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["512"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["16"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Нет"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+        {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]},
+        {"attrId": 10, "attrName": "бренд", "attrVal": ["Acer"]}
+      ]
+    },
+
+    {
+      "id": 15,
+      "categoryId": 2,
+      "brand": "Acer",
+      "name": "Ноутбук игровой Acer Nitro 5 AN515-54-54M2 NH.Q59ER.03L",
+      "title": "Cоздан для применения в школьном классе или институтской аудитории. ",
+      "body": "Отличное сочетание видеокарты и процессора, экран с хорошей ips матрицей, корпус симпатичный, без лишнего колхоза. ",
+      "price": "64 990",
+      "imgSet": [
+        "/goods/2_5_a.jpg",
+        "/goods/2_5_b.jpg",
+        "/goods/2_5_c.jpg",
+        "/goods/2_5_d.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i5 9300H 2.4 ГГц"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["512"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["12"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 11 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Нет"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+        {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]},
+        {"attrId": 10, "attrName": "бренд", "attrVal": ["Acer"]}
+      ]
+    },
+
+    {
+      "id": 16,
+      "categoryId": 2,
+      "brand": "Lenovo",
+      "name": "Ноутбук игровой Lenovo Legion 5 15ACH6H (82JU000XRU) Lenovo",
+      "title": "Lenovo Legion 5 15ACH6H готов доказать",
+      "body": "Главная особенность ноутбука от Lenovo – видеокарта GeForce RTX 3060 c 6 Гб памяти. Благодаря стараниям адаптера тебе не придётся смотреть на мыльные текстуры или отключать эффекты ради стабильного FPS. Он поддерживает технологию DLSS, которая пригодится в самых требовательных играх, а также трассировку лучей в реальном времени.",
+      "price": "109 990",
+      "imgSet": [
+        "/goods/2_6_a.jpg",
+        "/goods/2_6_b.jpg",
+        "/goods/2_6_c.jpg",
+        "/goods/2_6_d.jpg",
+        "/goods/2_6_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["AMD Ryzen 5 5600H 3.3 ГГц"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["512"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["16"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 9 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+        {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]},
+        {"attrId": 10, "attrName": "бренд", "attrVal": ["Lenovo"]}
+      ]
+    },
+
+    {
+      "id": 17,
+      "categoryId": 2,
+      "brand": "Dell",
+      "name": "Ноутбук Dell Inspiron 3501-8182",
+      "title": "ДОСТОЙНЫЙ УРОВЕНЬ",
+      "body": "Линейка ноутбуков Dell Inspiron 3501 выделяется не только скромными габаритами, благодаря которым владелец может запросто запускать самые востребованные программы в дороге, но и солидными характеристиками.",
+      "price": "31 990",
+      "imgSet": [
+        "/goods/2_7_b.jpg",
+        "/goods/2_7_c.jpg",
+        "/goods/2_7_d.jpg",
+        "/goods/2_7_e.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i3 1005G1 1.2 ГГц"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["128"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["4"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+        {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
+        {"attrId": 10, "attrName": "бренд", "attrVal": ["Dell"]}
+      ]
+    },
+
+    {
+      "id": 18,
+      "categoryId": 2,
+      "brand": "Apple",
+      "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 Space Gray",
+      "title": "MacBook Pro 13 дюймов",
+      "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
+      "price": "31 990",
+      "imgSet": [
+        "/goods/2_8_a.jpg",
+        "/goods/2_8_b.jpg",
+        "/goods/2_8_c.jpg",
+        "/goods/2_8_d.jpg",
+        "/goods/2_8_e.jpg",
+        "/goods/2_8_f.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "металл"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["Apple M1"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["13.3"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["128"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["MacOS"]},
+        {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
+        {"attrId": 10, "attrName": "бренд", "attrVal": ["Apple"]}
+      ]
+    },
+
+    {
+      "id": 19,
+      "categoryId": 2,
+      "brand": "Apple",
+      "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 White",
+      "title": "MacBook Pro 13 дюймов",
+      "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
+      "price": "31 990",
+      "imgSet": [
+        "/goods/2_8_a.jpg",
+        "/goods/2_8_b.jpg",
+        "/goods/2_8_c.jpg",
+        "/goods/2_8_d.jpg",
+        "/goods/2_8_e.jpg",
+        "/goods/2_8_f.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "металл"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["Apple M1"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["13.3"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["128"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["MacOS"]},
+        {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
+        {"attrId": 10, "attrName": "бренд", "attrVal": ["Apple"]}
+      ]
+    },
+
+    {
+      "id": 20,
+      "categoryId": 2,
+      "brand": "Apple",
+      "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 Pink",
+      "title": "MacBook Pro 13 дюймов",
+      "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
+      "price": "31 990",
+      "imgSet": [
+        "/goods/2_8_a.jpg",
+        "/goods/2_8_b.jpg",
+        "/goods/2_8_c.jpg",
+        "/goods/2_8_d.jpg",
+        "/goods/2_8_e.jpg",
+        "/goods/2_8_f.jpg"
+      ],
+      "favorite": false,
+      "isActive": false,
+      "attributes": [
+        {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "металл"]},
+        {"attrId": 2, "attrName": "процессор", "attrVal": ["Apple M1"]},
+        {"attrId": 3, "attrName": "диагональ", "attrVal": ["13.3"]},
+        {"attrId": 4, "attrName": "память", "attrVal": ["128"]},
+        {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+        {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
+        {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+        {"attrId": 8, "attrName": "OS", "attrVal": ["MacOS"]},
+        {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
+        {"attrId": 10, "attrName": "бренд", "attrVal": ["Apple"]}
       ]
     }
   ]

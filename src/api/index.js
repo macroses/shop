@@ -14,8 +14,7 @@ export default class Model {
     }
 
     static async loadItems(id) {
-        const itemsUrl = "http://localhost:3000/items"
-        let items = await axios(itemsUrl)
+        let items = await axios("http://localhost:3000/items")
         items = items.data.filter(el => el.categoryId === parseInt(id))
         return items
     }

@@ -38,6 +38,8 @@ export default {
 <style lang="scss" scoped>
 header {
   box-shadow: 0 0 5px 0 rgba(0,0,0, 0.3);
+  position: sticky;
+  top: 0;
 }
 
 .header-top-content {
