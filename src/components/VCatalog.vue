@@ -6,8 +6,11 @@
     </div>
     <transition name="fade">
       <ul class="catalog-list" v-if="isVisible">
-        <li v-for="categoryItem in loadedCategory" :key="categoryItem.id">
-          <router-link :to="'/category/' + categoryItem.id">
+        <li
+            v-for="categoryItem in loadedCategory"
+            :key="categoryItem.id">
+          <router-link
+              :to="'/category/' + categoryItem.id">
             <i :class="categoryItem.image"></i>
             {{ categoryItem.name }}
           </router-link>
@@ -37,8 +40,7 @@ export default {
     },
   },
   async mounted() {
-    const categoryList = new Model();
-    this.loadedCategory = await categoryList.loadCategories();
+    this.loadedCategory = await Model.loadCategories();
     document.addEventListener('click', this.hideCatalog, true)
   },
   beforeDestroy() {

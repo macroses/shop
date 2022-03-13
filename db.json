@@ -42,6 +42,7 @@
 
     {
       "id": 2,
+      "categoryId": 1,
       "brand": "Xiaomi",
       "name": "Смартфон Xiaomi Redmi 9A",
       "title": "ТОП ЗА СВОИ ДЕНЬГИ",
@@ -70,6 +71,7 @@
 
     {
       "id": 3,
+      "categoryId": 1,
       "brand": "Samsung",
       "name": "Смартфон Samsung Galaxy Z Flip 3 128GB Green (SM-F711B)",
       "title": "Свежий взгляд на раскладушку",
@@ -99,6 +101,7 @@
 
     {
       "id": 4,
+      "categoryId": 1,
       "brand": "Xiaomi",
       "name": "Смартфон Xiaomi Mi 11 256GB Midnight Gray",
       "title": "Снимайте как режиссер",
@@ -128,6 +131,7 @@
 
     {
       "id": 5,
+      "categoryId": 1,
       "brand": "Huawei",
       "name": "Смартфон Huawei P Smart 2021 4+128GB Crush Green (PPA-LX1)",
       "title": "Народная цена",
@@ -156,6 +160,7 @@
 
     {
       "id": 6,
+      "categoryId": 1,
       "brand": "Huawei",
       "name": "Смартфон Huawei P40 Pro Silver Frost (ELS-NX9)",
       "title": "НЕВЕРОЯТНЫЕ ВОЗМОЖНОСТИ ДЛЯ СЪЁМКИ",
@@ -185,6 +190,7 @@
 
     {
       "id": 7,
+      "categoryId": 1,
       "brand": "Apple",
       "name": "Смартфон Apple iPhone 11 64GB Black (MHDA3RU/A) Apple",
       "title": "Потрясающей производительностью обладает смартфон APPLE iPhone 11 ",
@@ -213,6 +219,7 @@
 
     {
       "id": 8,
+      "categoryId": 1,
       "brand": "Apple",
       "name": "Смартфон Apple iPhone 12 Pro Max 128GB Pacific Blue (MGDA3RU/A)",
       "title": "Встречайте iPhone 12 Pro Max",
@@ -244,6 +251,7 @@
 
     {
       "id": 9,
+      "categoryId": 1,
       "brand": "Apple",
       "name": "Смартфон Apple iPhone 11 64GB (PRODUCT)RED (MHDD3RU/A)",
       "title": "Во-первых, это быстро.",
@@ -272,6 +280,7 @@
 
     {
       "id": 10,
+      "categoryId": 1,
       "brand": "Asus",
       "name": "Смартфон ASUS Zenfone 8 Flip ZS672KS 8+256GB Black (2A022RU)",
       "title": "Asus Zenfone 8 Flip – смартфон флагманского уровня",

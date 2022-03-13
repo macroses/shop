@@ -1,22 +1,22 @@
 import axios from "axios";
 
 export default class Model {
-    async loadCategories() {
+    static async loadCategories() {
         const categoryUrl = "http://localhost:3000/category"
         const resolve = await axios(categoryUrl)
         return resolve.data
     }
 
-    async loadSingleCategory(id) {
+    static async loadSingleCategory(id) {
         let res = await this.loadCategories();
-        let newArr = res.filter(el => el.id === +id)
+        let newArr = res.filter(el => el.id === parseInt(id))
         return newArr[0]
     }
 
-    async loadItems(id) {
+    static async loadItems(id) {
         const itemsUrl = "http://localhost:3000/items"
         let items = await axios(itemsUrl)
-        let currentItemsCategory = items.data.filter(el => el.categoryId == id)
-        return currentItemsCategory
+        items = items.data.filter(el => el.categoryId === parseInt(id))
+        return items
     }
 }

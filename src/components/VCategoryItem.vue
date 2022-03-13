@@ -1,11 +1,15 @@
 <template>
-  <div class="category-box">
-<!--    <h1>category id {{id}}</h1>-->
+  <div class="category">
     <div class="container">
-      <div class="category">
-        {{category.id}}
-        {{category.name}}
+      <h1>
+        {{ category.name }}
         <i :class="category.image"></i>
+      </h1>
+      <div class="category-box">
+        <div class="category-filters"></div>
+        <ul class="goods-list">
+          <li class="good-item"></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -24,13 +28,10 @@ export default {
   },
   methods: {
     async getData() {
-      const res = new Model()
-      this.category = await res.loadSingleCategory(this.id)
+      this.category = await Model.loadSingleCategory(this.id)
     },
     async getGoods() {
-      const res = new Model()
-      this.goods = await res.loadItems(this.id)
-      console.log(this.goods)
+      this.goods = await Model.loadItems(this.id)
     }
   },
   watch: {
@@ -48,5 +49,17 @@ export default {
 </script>
 
 <style scoped>
+.category-box {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas: "filters content";
+}
 
+.category-filters {
+  grid-area: filters;
+}
+
+.goods-list {
+  grid-area: content;
+}
 </style>

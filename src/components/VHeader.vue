@@ -16,21 +16,6 @@
         </div>
       </div>
     </div>
-    <div class="header-bottom">
-      <div class="container">
-        <ul class="header-menu">
-          <li>
-            <router-link to="">О компании</router-link>
-          </li>
-          <li>
-            <router-link to="">Контакты</router-link>
-          </li>
-          <li>
-            <router-link to="">Галлерея</router-link>
-          </li>
-        </ul>
-      </div>
-    </div>
   </header>
 </template>
 
@@ -51,6 +36,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+header {
+  box-shadow: 0 0 5px 0 rgba(0,0,0, 0.3);
+}
+
 .header-top-content {
   display: flex;
   align-items: center;
@@ -71,25 +60,5 @@ export default {
   justify-content: center;
   cursor: pointer;
   color: var(--c-text);
-}
-
-.header-bottom {
-  background-color: var(--c-neutral);
-  padding: 16px 0;
-}
-
-.header-menu {
-  display: flex;
-  li {
-    font-weight: 600;
-    margin-right: 16px;
-    &:hover a{
-      color: var(--c-accent);
-    }
-    a {
-      color: var(--c-text-dark);
-      transition: color 0.3s;
-    }
-  }
 }
 </style>

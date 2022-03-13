@@ -24,7 +24,8 @@ const routes = [
   },
   {
     path: '/category/:id',
-    component: VCategoryItem
+    component: VCategoryItem,
+    props: true
   }
 ]
 
