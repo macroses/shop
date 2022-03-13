@@ -7,7 +7,6 @@
         {{category.name}}
         <i :class="category.image"></i>
       </div>
-      {{id}}
     </div>
   </div>
 </template>
@@ -19,14 +18,32 @@ export default {
   data() {
     return {
       id: this.$route.params['id'],
-      category: {}
+      category: {},
+      goods: []
+    }
+  },
+  methods: {
+    async getData() {
+      const res = new Model()
+      this.category = await res.loadSingleCategory(this.id)
+    },
+    async getGoods() {
+      const res = new Model()
+      this.goods = await res.loadItems(this.id)
+      console.log(this.goods)
     }
   },
   watch: {
-    // $route(toR, fromR) {
-    //   this.id = toR.params['id']
-    // }
+    $route(toR, fromR) {
+      this.id = toR.params['id']
+      this.getData()
+      this.getGoods()
+    }
   },
+   mounted() {
+     this.getData()
+     this.getGoods()
+  }
 }
 </script>
 
