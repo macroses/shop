@@ -86,6 +86,7 @@ export default {
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+  z-index: 10;
 
   a {
     white-space: nowrap;
