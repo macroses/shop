@@ -1,10 +1,25 @@
 <template>
   <div class="category">
     <div class="container">
-      <h1>
-        {{ category.name }}
-        <i :class="category.image"></i>
-      </h1>
+      <div class="category_top">
+        <h1>
+          {{ category.name }}
+          <i :class="category.image"></i>
+        </h1>
+        <div class="category-view">
+          <span 
+            :class="[categoryView ? 'active' : '']"
+            @click="toggleCategoryView">
+            <i class="fa-solid fa-table-cells-large"></i>
+          </span>
+          <span 
+            :class="[!categoryView ? 'active' : '']"
+            @click="toggleCategoryView">
+            <i class="fa-solid fa-list-ul"></i>
+          </span>
+        </div>
+      </div>
+      
 
       <div class="category-box">
         <div class="category-filters">
@@ -28,21 +43,26 @@
           </div>
         </div>
 
-          <ul class="goods-list">
-            <keep-alive>
-              <li
-                  class="good-item"
-                  v-for="good in goods" :key="good.id">
-                <router-link
-                    class="good-item__img-link"
-                    :to="'/goodItem/' + good.id">
-                  <img class="good-img" :src="good.imgSet[0]" alt="">
-                </router-link>
+          <ul 
+            class="goods-list"
+            :class="[categoryView ? 'grid' : 'list']">
+            <li
+                class="good-item"
+                v-for="good in goods" :key="good.id">
+              <router-link
+                  class="good-item__img-link"
+                  :to="'/goodItem/' + good.id">
+                <img class="good-img" :src="good.imgSet[0]" alt="">
+              </router-link>
+              <div class="good-item__content">
                 <div class="good-price">{{ good.price }} ₽</div>
-                <div class="good-name">{{ good.name }}</div>
-                <button class="to-cart__btn">В корзину</button>
-              </li>
-            </keep-alive>
+                <router-link
+                    :to="'/goodItem/' + good.id">
+                  <div class="good-name">{{ good.name }}</div>
+                </router-link>
+              </div>
+              <v-button>В корзину</v-button>
+            </li>
           </ul>
       </div>
     </div>
@@ -53,9 +73,10 @@
 import Model from "@/api";
 import VSelect from "@/components/UI/VSelect";
 import VInput from "@/components/UI/Vinput";
+import VButton from "@/components/UI/VButton";
 
 export default {
-  components: {VInput, VSelect},
+  components: {VInput, VSelect, VButton},
 
   data() {
     return {
@@ -70,7 +91,7 @@ export default {
       selectValue: 0,
       minPrice: null,
       maxPrice: null,
-      filteredArray: []
+      categoryView: true
     }
   },
   methods: {
@@ -79,28 +100,22 @@ export default {
       this.selectValue = option.value
       this.goods = Model.sortGoodsByPrice(option.value, this.goods)
     },
+    toggleCategoryView() {
+      this.categoryView = !this.categoryView
+    },
     async getData() {
       this.category = await Model.loadSingleCategory(this.id)
     },
     async getGoods() {
-      this.goods = await Model.loadItems(this.id)
-    }
-  },
-  computed: {
-    filterItems() {
-      // return this.filteredArray = Model.filterByPrice(
-      //     this.id,
-      //     this.minPrice,
-      //     this.maxPrice
-      // )
-    }
+      this.goods = await Model.loadItems(this.id, null, 0, 300000)
+    },
   },
   watch: {
     $route(toR) {
       this.id = toR.params.id
       this.getData()
       this.getGoods()
-    }
+    },
   },
   mounted() {
     this.getData()
@@ -109,7 +124,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.category-view {
+  span {
+    display: inline-block;
+    margin-left: 16px;
+    cursor: pointer;
+    color: var(--c-text);
+  }
+
+  .active {
+    color: var(--c-text-dark)
+  }
+}
+.category_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .filter-item {
   margin-bottom: 8px;
 }
@@ -132,12 +164,26 @@ export default {
 .good-item {
   box-shadow: 0 0 0 1px var(--c-text);
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.good-item__content {
+  flex: 1 0 auto;
+  a {
+    &:hover {
+      color: var(--c-accent);
+    }
+  }
 }
 
 .good-item__img-link {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 0;
+  width: 100%;
 }
 
 .category-filters {
@@ -152,6 +198,35 @@ export default {
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
   height: min-content;
   grid-gap: 1px;
+
+  &.list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.goods-list.list {
+  .good-item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .good-img {
+    max-height: 100px;
+  }
+
+  .good-item__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .good-item__img-link {
+    margin-right: 16px;
+  }
+
+  .good-price {
+    order: 1;
+  }
 }
 
 .good-img {
@@ -161,5 +236,14 @@ export default {
 .good-price {
   font-weight: 600;
   font-size: 18px;
+  margin: 8px 0;
+}
+
+.good-name {
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style>

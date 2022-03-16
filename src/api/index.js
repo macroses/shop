@@ -1,5 +1,22 @@
 import axios from "axios";
 
+const Filters = {
+    minPrice: (arr, price) => {
+        return arr.filter(item => item.price >= price)
+    },
+    maxPrice: (arr, price) => {
+        return arr.filter(item => item.price <= price)
+    },
+    categoryId: (arr, id) => {
+        return arr.filter(item => item.categoryId === parseInt(id))
+    },
+    byPrice: (arr, min, max) => {
+        return arr.filter(good => good.price >= min && good.price <= max)
+    }
+}
+
+// return Filters
+
 export default class Model {
     static async loadCategories() {
         const categoryUrl = "http://localhost:3000/category"
@@ -13,48 +30,37 @@ export default class Model {
         return newArr[0]
     }
 
-    static async loadItems(id) {
-        let items = await axios("http://localhost:3000/items")
-        items = items.data.filter(el => el.categoryId === parseInt(id))
-        return items
+    static async loadItems(id, filters = {}, min, max) {
+        const items = await axios("http://localhost:3000/items")
+
+        const categorizedItems = Filters.categoryId(items.data, id);
+        const byPriceItems = Filters.byPrice(categorizedItems, min, max)
+
+        return byPriceItems
+    }
+
+    static async loadSingleItem(id) {
+        const items = await axios("http://localhost:3000/items")
+        const item = items.data.filter(item => item.id === parseInt(id))
+        return item[0]
     }
 
     static sortGoodsByPrice(val ,arr) {
-        if(val === 2) arr = arr.sort((a,b) => a.price - b.price)
-        else if(val === 3) arr = arr.sort((a,b) => b.price - a.price)
-        return arr
+        if(val === 2) return arr.sort((a,b) => a.price - b.price)
+        else if(val === 3) return arr.sort((a,b) => b.price - a.price)
     }
 
-    static async getMinPrice(categoryId) {
-        let items = await this.loadItems(categoryId)
-        items = items.map(el => el.price).sort((a,b) => a - b)
-        return items[0]
+    static getMinPrice(goods) {
+        return Math.min(...goods.map(good => good.price))
     }
 
-    static async getMaxPrice(categoryId) {
-        let items = await this.loadItems(categoryId)
-        items = items.map(el => el.price).sort((a,b) => b - a)
-        return items[0]
+    static getMaxPrice(goods) {
+        return Math.max(...goods.map(good => good.price))
     }
 
-    static async filterByPrice(categoryId, minVal, maxVal) {
-        let items = await this.loadItems(categoryId);
-        let min = []
-        let max = []
-
-        if(!minVal && !maxVal) return items
-
-        function getMinPrice() {
-            min = items.map(el => el.price).sort((a,b) => a - b)
-            return min[0]
-        }
-        function getMaxPrice() {
-            max = items.map(el => el.price).sort((a,b) => b - a)
-            return max[0]
-        }
-
-        // let result = items.filter(good => good.price >= getMinPrice() && good.price <= getMaxPrice())
-        items = items.filter(good => good.price >= minVal && good.price <=maxVal)
-        return items
-    }
+    // static async filterByPrice(categoryId, minVal, maxVal) {
+    //     let items = await this.loadItems(categoryId);
+    //     if(!minVal && !maxVal) return items
+    //     items = items.filter(good => good.price >= this.getMinPrice() && good.price <= this.getMaxPrice())
+    // }
 }

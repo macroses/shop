@@ -37,7 +37,9 @@
         {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
         {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
         {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
-      ]
+      ],
+      "delivery": [],
+      "reviews": []
     },
     {
       "id": 2,
