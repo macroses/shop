@@ -1,12 +1,6 @@
 import axios from "axios";
 
 const Filters = {
-    minPrice: (arr, price) => {
-        return arr.filter(item => item.price >= price)
-    },
-    maxPrice: (arr, price) => {
-        return arr.filter(item => item.price <= price)
-    },
     categoryId: (arr, id) => {
         return arr.filter(item => item.categoryId === parseInt(id))
     },
