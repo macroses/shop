@@ -11,11 +11,15 @@ const Filters = {
         return arr.filter(item => item.categoryId === parseInt(id))
     },
     byPrice: (arr, min, max) => {
-        return arr.filter(good => good.price >= min && good.price <= max)
+        if(min && max) return arr.filter(good => good.price >= min && good.price <= max)
+
+        if(min) return arr.filter(good => good.price >= min)
+
+        if(max) return arr.filter(good => good.price <= max)
+
+        return arr
     }
 }
-
-// return Filters
 
 export default class Model {
     static async loadCategories() {
@@ -31,12 +35,18 @@ export default class Model {
     }
 
     static async loadItems(id, filters = {}, min, max) {
-        const items = await axios("http://localhost:3000/items")
+        let items = await axios("http://localhost:3000/items")
+        items = Filters.categoryId(items.data, id);
+        items = Filters.byPrice(items, min, max)
 
-        const categorizedItems = Filters.categoryId(items.data, id);
-        const byPriceItems = Filters.byPrice(categorizedItems, min, max)
+        const minPrice = Model.getMinPrice(items)
+        const maxPrice = Model.getMaxPrice(items)
 
-        return byPriceItems
+        return {
+            items,
+            minPrice,
+            maxPrice
+        }
     }
 
     static async loadSingleItem(id) {
@@ -57,10 +67,4 @@ export default class Model {
     static getMaxPrice(goods) {
         return Math.max(...goods.map(good => good.price))
     }
-
-    // static async filterByPrice(categoryId, minVal, maxVal) {
-    //     let items = await this.loadItems(categoryId);
-    //     if(!minVal && !maxVal) return items
-    //     items = items.filter(good => good.price >= this.getMinPrice() && good.price <= this.getMaxPrice())
-    // }
 }

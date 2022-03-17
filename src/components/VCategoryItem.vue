@@ -33,13 +33,17 @@
             <div class="filter-title">Цена</div>
             <div class="filter-item__wrap">
               <v-input
-                  pholder="от"
+                  :pholder="`от ${minItemPrice}`"
                   v-model.number="minPrice"/>
               <v-input
-                  pholder="до"
+                  :pholder="`до ${maxItemPrice}`"
                   v-model.number="maxPrice"/>
             </div>
             <p>{{filterItems}}</p>
+            <span v-if="minItemPrice || maxItemPrice">Результаты поиска: 
+              <span v-if="minItemPrice">Мин. цена {{ minItemPrice }}</span>
+              <span v-if="maxItemPrice">Макс. цена {{ maxItemPrice }}</span>
+            </span>
           </div>
         </div>
 
@@ -64,6 +68,7 @@
               <v-button>В корзину</v-button>
             </li>
           </ul>
+
       </div>
     </div>
   </div>
@@ -74,6 +79,7 @@ import Model from "@/api";
 import VSelect from "@/components/UI/VSelect";
 import VInput from "@/components/UI/Vinput";
 import VButton from "@/components/UI/VButton";
+import { debounce } from 'lodash';
 
 export default {
   components: {VInput, VSelect, VButton},
@@ -91,6 +97,8 @@ export default {
       selectValue: 0,
       minPrice: null,
       maxPrice: null,
+      minItemPrice: null,
+      maxItemPrice: null,
       categoryView: true
     }
   },
@@ -103,11 +111,17 @@ export default {
     toggleCategoryView() {
       this.categoryView = !this.categoryView
     },
+    debounceGetGoods: debounce(async function() {
+      await this.getGoods()
+    }, 1000),
     async getData() {
       this.category = await Model.loadSingleCategory(this.id)
     },
     async getGoods() {
-      this.goods = await Model.loadItems(this.id, null, 0, 300000)
+      const { items, minPrice, maxPrice } = await Model.loadItems(this.id, null, this.minPrice, this.maxPrice)
+      this.goods = items
+      this.minItemPrice = minPrice
+      this.maxItemPrice = maxPrice
     },
   },
   watch: {
@@ -116,15 +130,28 @@ export default {
       this.getData()
       this.getGoods()
     },
+    minPrice: {
+      async handler(newVal) {
+        await this.debounceGetGoods.bind(this)();
+      },
+    },
+    maxPrice: {
+      async handler(value) {
+        await this.debounceGetGoods.bind(this)();
+      }
+    }
   },
   mounted() {
-    this.getData()
-    this.getGoods()
+    Promise.all([
+      this.getData(),
+      this.getGoods()
+    ])
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
 .category-view {
   span {
     display: inline-block;
@@ -222,6 +249,7 @@ export default {
 
   .good-item__img-link {
     margin-right: 16px;
+    width: auto;
   }
 
   .good-price {
