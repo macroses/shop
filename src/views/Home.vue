@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    main coвапвапвапвапвап
+    <div class="container">
+      <div class="home__category">
+        <i data-feather="circle"></i>
+      </div>
+    </div>
   </div>
 </template>
 

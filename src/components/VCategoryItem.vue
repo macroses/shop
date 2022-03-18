@@ -40,13 +40,13 @@
                   v-model.number="maxPrice"/>
             </div>
           </div>
-<!--          <div class="filter-item">-->
-<!--            <ul>-->
-<!--              <li v-for="item in uniqueAttrNames">-->
-<!--                {{ item }}-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </div>-->
+          <div class="filter-item">
+            <ul>
+              <li v-for="item in uniqueAttrNames">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
         </div>
 
           <ul 
@@ -103,8 +103,7 @@ export default {
       maxItemPrice: null,
       categoryView: true,
 
-      uniqueAttrNames: [],
-      uniqueAttrValues: []
+      uniqueAttrNames: null
     }
   },
   methods: {

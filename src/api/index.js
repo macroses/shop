@@ -65,39 +65,6 @@ export default class Model {
         return Math.max(...goods.map(good => good.price))
     }
 
-    // пробежаться по всем именам атрибутов
-    // сделать массив уникальных имен атрибутов
-    // пробежаться по всем значениям атрибутов
-    // сделать массив уникальных значений атрибутов
-
-    // вложить в каждое уникальное имя набор уникальных значений
-
-    // static getUniqueNames(array) {
-    //     let newArr = []
-    //
-    //     array.forEach(item => {
-    //         item.attributes.forEach(el => {
-    //             newArr = [...newArr, el.attrName]
-    //         })
-    //     })
-    //
-    //     return new Set(newArr)
-    //     // взять этот массив и накидать туда уникальных значений атрибутов
-    // }
-    //
-    // static getUniqueValues(array) {
-    //     let newArr = []
-    //
-    //     array.forEach(item => {
-    //         item.attributes.forEach(el => {
-    //             newArr = [...newArr, el.attrName]
-    //         })
-    //     })
-    //
-    //     return new Set(newArr)
-    //     // взять этот массив и закидывать его в каждое уникальное имя
-    // }
-
     static getUniqueFilterParameters(innerArr) {
         function getUniqueNames(arr) {
             let newArr = []
@@ -120,9 +87,6 @@ export default class Model {
             }))
         )
 
-        attrsArray.forEach(el => {
-            console.log(el)
-        })
-
+        return result
     }
 }
