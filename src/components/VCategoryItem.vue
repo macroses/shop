@@ -39,12 +39,14 @@
                   :pholder="`до ${maxItemPrice}`"
                   v-model.number="maxPrice"/>
             </div>
-            <p>{{filterItems}}</p>
-            <span v-if="minItemPrice || maxItemPrice">Результаты поиска: 
-              <span v-if="minItemPrice">Мин. цена {{ minItemPrice }}</span>
-              <span v-if="maxItemPrice">Макс. цена {{ maxItemPrice }}</span>
-            </span>
           </div>
+<!--          <div class="filter-item">-->
+<!--            <ul>-->
+<!--              <li v-for="item in uniqueAttrNames">-->
+<!--                {{ item }}-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
         </div>
 
           <ul 
@@ -99,7 +101,10 @@ export default {
       maxPrice: null,
       minItemPrice: null,
       maxItemPrice: null,
-      categoryView: true
+      categoryView: true,
+
+      uniqueAttrNames: [],
+      uniqueAttrValues: []
     }
   },
   methods: {
@@ -122,6 +127,8 @@ export default {
       this.goods = items
       this.minItemPrice = minPrice
       this.maxItemPrice = maxPrice
+
+      this.uniqueAttrNames = Model.getUniqueFilterParameters(this.goods)
     },
   },
   watch: {
@@ -151,7 +158,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .category-view {
   span {
     display: inline-block;

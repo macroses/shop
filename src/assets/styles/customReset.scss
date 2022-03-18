@@ -68,3 +68,9 @@ textarea,
 select {
   font: inherit;
 }
+@media screen and (min-width: 1350px) {
+  html {
+    overflow-x:hidden;
+    margin-right: calc(-1 * (100vw - 100%))
+  }
+}

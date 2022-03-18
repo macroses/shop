@@ -9,6 +9,16 @@
       "id": 2,
       "name": "Ноутбуки и настольные ПК",
       "image": "fa-solid fa-laptop"
+    },
+    {
+      "id": 3,
+      "name": "Стиральные машины",
+      "image": "fa-solid fa-shirt"
+    },
+    {
+      "id": 4,
+      "name": "Холодильники",
+      "image": "fa-solid fa-kitchen-set"
     }
   ],
   "items": [

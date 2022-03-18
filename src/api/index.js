@@ -33,8 +33,11 @@ export default class Model {
         items = Filters.categoryId(items.data, id);
         items = Filters.byPrice(items, min, max)
 
-        const minPrice = Model.getMinPrice(items)
-        const maxPrice = Model.getMaxPrice(items)
+        let minPrice = Model.getMinPrice(items)
+        let maxPrice = Model.getMaxPrice(items)
+
+        if(minPrice === Infinity) minPrice = 0
+        if(maxPrice === -Infinity) maxPrice = 0
 
         return {
             items,
@@ -60,5 +63,66 @@ export default class Model {
 
     static getMaxPrice(goods) {
         return Math.max(...goods.map(good => good.price))
+    }
+
+    // пробежаться по всем именам атрибутов
+    // сделать массив уникальных имен атрибутов
+    // пробежаться по всем значениям атрибутов
+    // сделать массив уникальных значений атрибутов
+
+    // вложить в каждое уникальное имя набор уникальных значений
+
+    // static getUniqueNames(array) {
+    //     let newArr = []
+    //
+    //     array.forEach(item => {
+    //         item.attributes.forEach(el => {
+    //             newArr = [...newArr, el.attrName]
+    //         })
+    //     })
+    //
+    //     return new Set(newArr)
+    //     // взять этот массив и накидать туда уникальных значений атрибутов
+    // }
+    //
+    // static getUniqueValues(array) {
+    //     let newArr = []
+    //
+    //     array.forEach(item => {
+    //         item.attributes.forEach(el => {
+    //             newArr = [...newArr, el.attrName]
+    //         })
+    //     })
+    //
+    //     return new Set(newArr)
+    //     // взять этот массив и закидывать его в каждое уникальное имя
+    // }
+
+    static getUniqueFilterParameters(innerArr) {
+        function getUniqueNames(arr) {
+            let newArr = []
+            arr.forEach(elem => {
+                elem.attributes.forEach(item => {
+                    newArr = [...newArr, item.attrName]
+                })
+            })
+
+            return Array.from(new Set(newArr))
+        }
+
+        let attrsArray = innerArr.map(attrs => attrs.attributes)
+
+        const result = Object.assign(
+          {},
+          ...getUniqueNames(innerArr)
+            .map(name => ({
+                [name]: attrsArray.find(attrs => attrs.attrName === name)
+            }))
+        )
+
+        attrsArray.forEach(el => {
+            console.log(el)
+        })
+
     }
 }
