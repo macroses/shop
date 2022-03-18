@@ -1,6 +1,10 @@
 <template>
   <div class="inp-wrap">
-    <input type="text" :placeholder="pholder">
+    <input
+        type="text"
+        :placeholder="pholder"
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)">
     <slot />
   </div>
 </template>
@@ -9,10 +13,8 @@
 export default {
   name: 'v-input',
   props: {
-    pholder: {
-      type: String,
-      required: true
-    }
+    pholder: {type: String, required: true},
+    modelValue: [Number, String]
   }
 }
 </script>
@@ -21,8 +23,7 @@ export default {
 input {
   width: 100%;
   outline: none;
-  border: 1px solid var(--c-neutral);
-  border-radius: 4px;
+  border: 1px solid var(--c-text);
   padding: 8px;
   color: var(--c-text);
   transition: border-color 0.3s;

@@ -11,7 +11,9 @@
             :key="categoryItem.id">
           <router-link
               :to="'/category/' + categoryItem.id">
-            <i :class="categoryItem.image"></i>
+            <span class="icon-wrap">
+              <i :class="categoryItem.image"></i>
+            </span>
             {{ categoryItem.name }}
           </router-link>
         </li>
@@ -70,6 +72,12 @@ export default {
   }
 }
 
+.icon-wrap {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
+
 .catalog-list {
   position: absolute;
   background-color: var(--c-white);
@@ -78,6 +86,7 @@ export default {
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
+  z-index: 10;
 
   a {
     white-space: nowrap;

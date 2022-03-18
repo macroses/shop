@@ -4,6 +4,7 @@ import Favorite from "@/views/Favorite";
 import Auth from "@/views/Auth";
 import StorePage from "@/views/StorePage";
 import VCategoryItem from "@/components/VCategoryItem";
+import VGoodItem from "@/components/VGoodItem";
 
 const routes = [
   {
@@ -24,14 +25,17 @@ const routes = [
   },
   {
     path: '/category/:id',
-    component: VCategoryItem,
-    props: true
+    component: VCategoryItem
+  },
+  {
+    path: '/goodItem/:id',
+    component: VGoodItem
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 })
 
 export default router
