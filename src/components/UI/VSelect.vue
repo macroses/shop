@@ -4,7 +4,9 @@
         @click="toggleOptions"
         class="chosen-value">
       {{selected}}
-      <i :class="caretIcon"></i>
+      <svg class="icon">
+        <use :xlink:href="`/thin.svg#${isVisible ? 'angle-up' : 'angle-down'}`"></use>
+      </svg>
     </div>
     <v-transition>
       <ul
@@ -54,15 +56,6 @@ export default {
       this.isVisible = false
     }
   },
-  watch: {
-    isVisible() {
-      if(this.isVisible) {
-        this.caretIcon = "fa-solid fa-angle-up"
-      } else {
-        this.caretIcon = "fa-solid fa-angle-down"
-      }
-    }
-  },
   mounted() {
     document.addEventListener('click', this.hideOptions, true)
   },
@@ -80,11 +73,19 @@ export default {
 
 .chosen-value {
   height: 42px;
-  border: 1px solid var(--c-text);
+  background: rgba(255,255,255, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-right: 1px solid rgba(255,255,255,0.3);
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   padding: 4px 8px;
   cursor: pointer;
+  border-radius: 6px;
+
+  color: var(--c-white);
 
   justify-content: space-between;
 }
@@ -109,6 +110,10 @@ export default {
       color: var(--c-white);
     }
   }
+}
+
+.icon {
+  fill: var(--c-white);
 }
 
 .slide-enter-active {

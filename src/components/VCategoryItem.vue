@@ -4,18 +4,17 @@
       <div class="category_top">
         <h1>
           {{ category.name }}
-          <i :class="category.image"></i>
+          <svg class="icon">
+            <use :xlink:href="`/thin.svg#${category.image}`"></use>
+          </svg>
         </h1>
         <div class="category-view">
-          <span 
+          <span
             :class="[categoryView ? 'active' : '']"
             @click="toggleCategoryView">
-            <i class="fa-solid fa-table-cells-large"></i>
-          </span>
-          <span 
-            :class="[!categoryView ? 'active' : '']"
-            @click="toggleCategoryView">
-            <i class="fa-solid fa-list-ul"></i>
+            <svg class="icon">
+              <use :xlink:href="`/thin.svg#${categoryView ? 'table-cells-large' : 'list-ul'}`"></use>
+            </svg>
           </span>
         </div>
       </div>
@@ -157,12 +156,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: var(--c-white);
+  .icon {
+    fill: var(--c-white);
+    height: 42px;
+    margin-left: 8px;
+  }
+}
+
 .category-view {
   span {
     display: inline-block;
     margin-left: 16px;
     cursor: pointer;
-    color: var(--c-text);
+    fill: var(--c-white);
   }
 
   .active {
@@ -173,6 +184,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 24px;
 }
 .filter-item {
   margin-bottom: 8px;
@@ -181,24 +193,33 @@ export default {
 .filter-title {
   font-weight: 600;
   margin-bottom: 8px;
+  color: var(--c-white);
 }
 
 .filter-item__wrap {
   display: flex;
+  gap: 8px;
 }
 
 .category-box {
   display: grid;
   grid-template-columns: 300px 1fr;
   grid-template-areas: "filters content";
+  grid-gap: 16px;
 }
 
 .good-item {
-  box-shadow: 0 0 0 1px var(--c-text);
   padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border-radius: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-right: 1px solid rgba(255,255,255,0.3);
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255, 0.1);
 }
 
 .good-item__content {
@@ -225,11 +246,10 @@ export default {
 .goods-list {
   grid-area: content;
 
-  margin-top: 1px;
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
   height: min-content;
-  grid-gap: 1px;
+  grid-gap: 16px;
 
   &.list {
     grid-template-columns: 1fr;
@@ -270,6 +290,7 @@ export default {
   font-weight: 600;
   font-size: 18px;
   margin: 8px 0;
+  color: var(--c-white);
 }
 
 .good-name {
@@ -278,5 +299,6 @@ export default {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  color: var(--c-white);
 }
 </style>

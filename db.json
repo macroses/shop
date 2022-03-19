@@ -3,22 +3,22 @@
     {
       "id": 1,
       "name": "Смартфоны и планшеты",
-      "image": "fa-solid fa-mobile"
+      "image": "mobile-notch"
     },
     {
       "id": 2,
       "name": "Ноутбуки и настольные ПК",
-      "image": "fa-solid fa-laptop"
+      "image": "computer"
     },
     {
       "id": 3,
       "name": "Стиральные машины",
-      "image": "fa-solid fa-shirt"
+      "image": "washing-machine"
     },
     {
       "id": 4,
       "name": "Холодильники",
-      "image": "fa-solid fa-kitchen-set"
+      "image": "refrigerator"
     }
   ],
   "items": [
@@ -31,10 +31,11 @@
       "body": "Большой 6,5-дюймовый HD+ экран с V-образным вырезом для камеры создан для полного погружения в контент. Благодаря поддержке технологии HD+ картинка на Samsung Galaxy A12 яркая и насыщенная.",
       "price": 13990,
       "imgSet": [
-        "/goods/1_1_a.webp",
-        "/goods/1_1_b.webp",
-        "/goods/1_1_c.webp",
-        "/goods/1_1_d.webp"
+        "/webp/1_10_a.webp",
+        "/webp/1_10_b.webp",
+        "/webp/1_10_c.webp",
+        "/webp/1_10_d.webp",
+        "/webp/1_10_e.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -60,11 +61,11 @@
       "body": "",
       "price": 72990,
       "imgSet": [
-        "/goods/1_2_a.jpg",
-        "/goods/1_2_b.jpg",
-        "/goods/1_2_c.jpg",
-        "/goods/1_2_d.jpg",
-        "/goods/1_2_e.jpg"
+        "/webp/1_2_a.webp",
+        "/webp/1_2_b.webp",
+        "/webp/1_2_c.webp",
+        "/webp/1_2_d.webp",
+        "/webp/1_2_e.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -89,12 +90,12 @@
       "body": "Откройте для себя эксклюзивные цвета Galaxy Z Flip3 5G только на Samsung.com.Предложение ограничено!",
       "price": 89990,
       "imgSet": [
-        "/goods/1_3_a.jpg",
-        "/goods/1_3_b.jpg",
-        "/goods/1_3_c.jpg",
-        "/goods/1_3_d.jpg",
-        "/goods/1_3_e.jpg",
-        "/goods/1_3_f.jpg"
+        "/webp/1_3_a.webp",
+        "/webp/1_3_b.webp",
+        "/webp/1_3_c.webp",
+        "/webp/1_3_d.webp",
+        "/webp/1_3_e.webp",
+        "/webp/1_3_f.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -119,12 +120,12 @@
       "body": "Mi 11 создан для любителей кино. Xiaomi объединила выдающиеся технологии с передовым программным обеспечением, чтобы предложить множество креативных и простых в использовании функций видеосъёмки.",
       "price": 72990,
       "imgSet": [
-        "/goods/1_4_a.jpg",
-        "/goods/1_4_b.jpg",
-        "/goods/1_4_c.jpg",
-        "/goods/1_4_d.jpg",
-        "/goods/1_4_e.jpg",
-        "/goods/1_4_f.jpg"
+        "/webp/1_4_a.webp",
+        "/webp/1_4_b.webp",
+        "/webp/1_4_c.webp",
+        "/webp/1_4_d.webp",
+        "/webp/1_4_e.webp",
+        "/webp/1_4_f.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -149,11 +150,11 @@
       "body": "Huawei делала P Smart 2021, явно прислушиваясь к народным чаяниям, словно бы на основе социологического опроса.",
       "price": 15990,
       "imgSet": [
-        "/goods/1_5_a.jpg",
-        "/goods/1_5_b.jpg",
-        "/goods/1_5_c.jpg",
-        "/goods/1_5_d.jpg",
-        "/goods/1_5_e.jpg"
+        "/webp/1_5_a.webp",
+        "/webp/1_5_b.webp",
+        "/webp/1_5_c.webp",
+        "/webp/1_5_d.webp",
+        "/webp/1_5_e.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -178,12 +179,12 @@
       "body": "Huawei P40 Pro – улучшенная версия флагманского смартфона от известного производителя.  Его 6,58-дюймовый экран, выполненный по технологии OLED, загнут на все грани и торцы корпуса. За счёт этого создаётся ощущение полной безграничности дисплея. Разрешение 2640 х 1200 пикселей и частота обновления 90 Гц обеспечивают безупречную реалистичность изображения.",
       "price": 64999,
       "imgSet": [
-        "/goods/1_6_a.jpg",
-        "/goods/1_6_b.jpg",
-        "/goods/1_6_c.jpg",
-        "/goods/1_6_d.jpg",
-        "/goods/1_6_e.jpg",
-        "/goods/1_6_f.jpg"
+        "/webp/1_6_a.webp",
+        "/webp/1_6_b.webp",
+        "/webp/1_6_c.webp",
+        "/webp/1_6_d.webp",
+        "/webp/1_6_e.webp",
+        "/webp/1_6_f.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -208,11 +209,11 @@
       "body": "Корпус модели выполнен из металла, имеющего хорошую устойчивость к внешним повреждениям, а также влаге и пыли. Стильный смартфон APPLE iPhone 11 128Гб, MHDH3RU/A обладает экраном IPS диагональю 6,1 дюйма для отображения яркой, насыщенной цветом картинки в разрешении 1792x828 пикселей. Система камер 12+12 Мп, сочетающая в себе широкоугольную и сверхширокоугольную камеры, отличается большим спектром возможностей, позволяя создавать фотографии высокого качества. Для длительной автономной работы модель имеет ёмкую аккумуляторную батарею.",
       "price": 65000,
       "imgSet": [
-        "/goods/1_7_a.jpg",
-        "/goods/1_7_b.jpg",
-        "/goods/1_7_c.jpg",
-        "/goods/1_7_d.jpg",
-        "/goods/1_7_e.jpg"
+        "/webp/1_7_a.webp",
+        "/webp/1_7_b.webp",
+        "/webp/1_7_c.webp",
+        "/webp/1_7_d.webp",
+        "/webp/1_7_e.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -237,14 +238,14 @@
       "body": "Это iPhone 12 Pro Max. A14 Bionic, самый быстрый процессор iPhone. Система камер Pro, которая обеспечивает потрясающее качество снимков при слабом освещении. И увеличенный дисплей Super Retina XDR. Это новая эра для iPhone.",
       "price": 103390,
       "imgSet": [
-        "/goods/1_8_a.jpg",
-        "/goods/1_8_b.jpg",
-        "/goods/1_8_c.jpg",
-        "/goods/1_8_d.jpg",
-        "/goods/1_8_e.jpg",
-        "/goods/1_8_f.jpg",
-        "/goods/1_8_g.jpg",
-        "/goods/1_8_h.jpg"
+        "/webp/1_8_a.webp",
+        "/webp/1_8_b.webp",
+        "/webp/1_8_c.webp",
+        "/webp/1_8_d.webp",
+        "/webp/1_8_e.webp",
+        "/webp/1_8_f.webp",
+        "/webp/1_8_g.webp",
+        "/webp/1_8_h.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -269,11 +270,11 @@
       "body": "A14 Bionic, самый быстрый процессор iPhone. Дисплей OLED от края до края. Передняя панель Ceramic Shield, которая в четыре раза снижает риск повреждений дисплея при падении. И Ночной режим на всех камерах. Всё это есть в iPhone 12. В двух размерах.",
       "price": 69900,
       "imgSet": [
-        "/goods/1_9_a.jpg",
-        "/goods/1_9_b.jpg",
-        "/goods/1_9_c.jpg",
-        "/goods/1_9_d.jpg",
-        "/goods/1_9_e.jpg"
+        "/webp/1_9_a.webp",
+        "/webp/1_9_b.webp",
+        "/webp/1_9_c.webp",
+        "/webp/1_9_d.webp",
+        "/webp/1_9_e.webp"
       ],
       "favorite": false,
       "isActive": false,
@@ -298,11 +299,11 @@
       "body": "Одно из них – поворотный блок камер, позволяющий делать снимки отличного качества в обычном и фронтальном режимах. В вашем распоряжении – три объектива: 64, 12 и 8 Мп. С ними вы получите как обычные фотографии, яркие и детализированные, так и эффектные панорамы, портреты, селфи и видеоролики.",
       "price": 69990,
       "imgSet": [
-        "/goods/1_10_a.jpg",
-        "/goods/1_10_b.jpg",
-        "/goods/1_10_c.jpg",
-        "/goods/1_10_d.jpg",
-        "/goods/1_10_e.jpg"
+        "/webp/1_10_a.webp",
+        "/webp/1_10_b.webp",
+        "/webp/1_10_c.webp",
+        "/webp/1_10_d.webp",
+        "/webp/1_10_e.webp"
       ],
       "favorite": false,
       "isActive": false,

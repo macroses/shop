@@ -4,17 +4,24 @@
   --c-text: #a9a9a9;
   --c-text-dark: #444;
   --c-bg: #caebf2;
-  --c-accent: #ff3b3f;
+  --c-border: #ededed;
+  --c-accent: #ff8049;
   --c-neutral: #efefef;
   --c-white: #fff;
 }
 
 body {
   font-family: 'Jost', sans-serif;
+  background-image: linear-gradient(45deg,rgba(74, 79, 97, 1), rgba(101, 192, 144, 1));
 }
 
 .container {
   max-width: 1232px;
   margin: 0 auto;
   padding: 0 16px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
 }

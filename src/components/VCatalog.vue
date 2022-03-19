@@ -1,7 +1,9 @@
 <template>
   <div class="catalog-wrap">
     <div class="catalog" @click="toggleCatalog">
-      <i class="fa-solid fa-bars"></i>
+      <svg class="icon">
+        <use :xlink:href="`/thin.svg#${isVisible ? 'folder-open' : 'folder'}`"></use>
+      </svg>
       Каталог
     </div>
     <transition name="fade">
@@ -12,7 +14,9 @@
           <router-link
               :to="'/category/' + categoryItem.id">
             <span class="icon-wrap">
-              <i :class="categoryItem.image"></i>
+              <svg class="icon">
+                <use :xlink:href="'/thin.svg#' + categoryItem.image"></use>
+              </svg>
             </span>
             {{ categoryItem.name }}
           </router-link>
@@ -61,14 +65,13 @@ export default {
   align-items: center;
   justify-content: center;
   color: var(--c-neutral);
-  background: var(--c-accent);
   height: 42px;
   padding: 0 16px;
-  border-radius: 4px;
   margin-right: 16px;
   cursor: pointer;
-  i {
+  .icon {
     margin-right: 8px;
+    fill: var(--c-white);
   }
 }
 
@@ -76,27 +79,38 @@ export default {
   display: inline-block;
   width: 30px;
   text-align: center;
+  margin-right: 8px;
 }
 
 .catalog-list {
   position: absolute;
-  background-color: var(--c-white);
+  background-color: rgba(0,0,0, 0.1);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-right: 1px solid rgba(255,255,255,0.3);
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.4);
   top: 100%;
   left: 0;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 0 20px 0 rgba(0,0,0, 0.2);
   z-index: 10;
 
   a {
+    display: flex;
+    align-items: center;
     white-space: nowrap;
-    display: block;
     padding: 8px 16px;
-    transition: 0.3s;
+    color: var(--c-white);
+    transition: border-left-color 0.3s;
+    border-left: 1px solid transparent;
     &:hover {
-      background-color: var(--c-accent);
-      color: var(--c-white);
+      border-left-color: rgba(255,255,255, 0.7);
     }
+  }
+
+  .icon {
+    fill: var(--c-white);
   }
 }
 

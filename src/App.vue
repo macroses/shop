@@ -1,4 +1,5 @@
 <template>
+  <bubbles />
   <div class="wrapper">
     <v-header></v-header>
     <main>
@@ -11,8 +12,9 @@
 
 <script>
 import VHeader from "@/components/VHeader";
+import Bubbles from "@/components/UI/Bubbles";
 export default {
-  components: {VHeader}
+  components: {VHeader, Bubbles},
 }
 </script>
 
@@ -22,6 +24,10 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+#app {
+  position: relative;
 }
 
 main {

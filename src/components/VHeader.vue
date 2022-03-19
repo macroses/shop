@@ -3,13 +3,15 @@
     <div class="header-top">
       <div class="container">
         <div class="header-top-content">
-          <router-link to="/">
-            <v-logo />
+          <router-link to="/" class="logo">
+            <img src="/logo.svg" alt="Лого">
           </router-link>
           <v-catalog />
           <v-input :pholder="placeholder">
             <button class="search-submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <svg class="icon">
+                <use xlink:href="/thin.svg#magnifying-glass"></use>
+              </svg>
             </button>
           </v-input>
           <v-funcs />
@@ -20,13 +22,12 @@
 </template>
 
 <script>
-import VLogo from "@/components/UI/VLogo";
 import VInput from "@/components/UI/Vinput";
 import VFuncs from "@/components/VFuncs";
 import VCatalog from "@/components/VCatalog";
 export default {
   name: 'v-header',
-  components: {VCatalog, VInput, VLogo, VFuncs},
+  components: {VCatalog, VInput, VFuncs},
   data() {
     return {
       placeholder: 'Поиск'
@@ -37,13 +38,13 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  box-shadow: 0 0 5px 0 rgba(0,0,0, 0.3);
+  margin-bottom: 32px;
 }
 
 .header-top-content {
   display: flex;
   align-items: center;
-  padding: 8px 0;
+  padding: 16px 0;
 }
 
 .search-submit {
@@ -60,5 +61,15 @@ header {
   justify-content: center;
   cursor: pointer;
   color: var(--c-text);
+}
+
+.logo {
+  margin-right: 16px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--c-white);
 }
 </style>
