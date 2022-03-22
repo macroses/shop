@@ -38,6 +38,7 @@ export default class Model {
 
         if(minPrice === Infinity) minPrice = 0
         if(maxPrice === -Infinity) maxPrice = 0
+        // ну тут чето по фильтрам добавим, как раз из категорий приходят фильтры
 
         return {
             items,
@@ -66,27 +67,27 @@ export default class Model {
     }
 
     static getUniqueFilterParameters(innerArr) {
-        function getUniqueNames(arr) {
-            let newArr = []
-            arr.forEach(elem => {
-                elem.attributes.forEach(item => {
-                    newArr = [...newArr, item.attrName]
-                })
-            })
+        const categorySet = new Map();
+        innerArr.forEach(good => {
+            
+            good.attributes.forEach(goodAttr => {
+                if(!categorySet.has(goodAttr.attrName)) {
+                    categorySet.set(goodAttr.attrName, new Set());
+                }
 
-            return Array.from(new Set(newArr))
+                goodAttr.attrVal.forEach(attr_val => {
+                    categorySet.get(goodAttr.attrName).add(attr_val)
+                });
+            })
+        });
+
+        for(const key of categorySet) {
+            categorySet.set(
+              key[0],
+              Array.from(key[1])
+            )
         }
 
-        let attrsArray = innerArr.map(attrs => attrs.attributes)
-
-        const result = Object.assign(
-          {},
-          ...getUniqueNames(innerArr)
-            .map(name => ({
-                [name]: attrsArray.find(attrs => attrs.attrName === name)
-            }))
-        )
-
-        return result
+        return Object.fromEntries(categorySet.entries())
     }
 }

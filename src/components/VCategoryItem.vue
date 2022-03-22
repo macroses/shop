@@ -40,9 +40,17 @@
             </div>
           </div>
           <div class="filter-item">
-            <ul>
-              <li v-for="item in uniqueAttrNames">
-                {{ item }}
+            <ul v-if="uniqueAttrNames" class="filters-collection">
+              <li v-for="[key, value] in Object.entries(uniqueAttrNames)" :key="key">
+                <span>{{key}}</span>
+                <ul>
+                  <li v-for="item in value" :key="item">
+                    <label>
+                      <input type="checkbox" :value="item" v-model="selectedFilterCategory[key]">
+                      <span>{{item}}</span>
+                    </label>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
@@ -51,6 +59,7 @@
         <v-goods-list
           :goods="goods"
           :is-category-list="categoryView"
+          v-if="!hasAnyFilter"
         ></v-goods-list>
       </div>
     </div>
@@ -85,7 +94,8 @@ export default {
       maxItemPrice: null,
       categoryView: true,
 
-      uniqueAttrNames: null
+      uniqueAttrNames: null,
+      selectedFilterCategory: {}
     }
   },
   methods: {
@@ -104,13 +114,36 @@ export default {
       this.category = await Model.loadSingleCategory(this.id)
     },
     async getGoods() {
-      const { items, minPrice, maxPrice } = await Model.loadItems(this.id, null, this.minPrice, this.maxPrice)
+      const { items, minPrice, maxPrice } = await Model.loadItems(
+          this.id,
+          this.selectedFilters,
+          this.minPrice,
+          this.maxPrice
+      )
+
       this.goods = items
       this.minItemPrice = minPrice
       this.maxItemPrice = maxPrice
 
       this.uniqueAttrNames = Model.getUniqueFilterParameters(this.goods)
+      this.selectedFilterCategory = Object.assign({}, 
+        ...Object.keys(this.uniqueAttrNames)
+        .map(key => ({[key] : []})
+      ))
     },
+  },
+  computed: {
+    selectedFilters() {
+      return Object.assign(
+        {},
+        ...Object.entries(this.selectedFilterCategory)
+          .filter(([_, value]) => value.length)
+          .map(([key, value]) => ({[key] : value}))
+      )
+    },
+    hasAnyFilter() {
+      return !!Object.keys(this.selectedFilters).length
+    }
   },
   watch: {
     $route(toR) {
@@ -149,6 +182,10 @@ h1 {
     height: 42px;
     margin-left: 8px;
   }
+}
+
+.filters-collection {
+  color: #fff
 }
 
 .category-view {
