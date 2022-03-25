@@ -1,24 +1,12 @@
 <template>
   <div class="category">
     <div class="container">
-      <div class="category_top">
-        <h1>
-          {{ category.name }}
-          <svg class="icon">
-            <use :xlink:href="`/thin.svg#${category.image}`"></use>
-          </svg>
-        </h1>
-        <div class="category-view">
-          <span
-            :class="[categoryView ? 'active' : '']"
-            @click="toggleCategoryView">
-            <svg class="icon">
-              <use :xlink:href="`/thin.svg#${categoryView ? 'table-cells-large' : 'list-ul'}`"></use>
-            </svg>
-          </span>
-        </div>
-      </div>
-      
+      <VCategoryTop
+        :categoryName="category.name"
+        :categoryImage="category.image"
+        :categoryViewType="categoryView"
+        @toggle-view="toggleCategoryView"
+      />
 
       <div class="category-box">
         <div class="category-filters">
@@ -45,10 +33,10 @@
                 <span>{{key}}</span>
                 <ul>
                   <li v-for="item in value" :key="item">
-                    <label>
-                      <input type="checkbox" :value="item" v-model="selectedFilterCategory[key]">
-                      <span>{{item}}</span>
-                    </label>
+                    <v-checkbox
+                      :value="item"
+                      v-model="selectedFilterCategory[key]"
+                    />
                   </li>
                 </ul>
               </li>
@@ -57,10 +45,10 @@
         </div>
 
         <v-goods-list
-          :goods="goods"
-          :is-category-list="categoryView"
-          v-if="!hasAnyFilter"
-        ></v-goods-list>
+            v-if="!hasAnyFilter"
+            :goods="goods"
+            :is-category-list="categoryView"
+        />
       </div>
     </div>
   </div>
@@ -70,12 +58,14 @@
 import Model from "@/api";
 import VSelect from "@/components/UI/VSelect";
 import VInput from "@/components/UI/Vinput";
+import VCheckbox from "@/components/UI/VCheckbox";
 import VButton from "@/components/UI/VButton";
 import VGoodsList from "@/components/VGoodsList";
+import VCategoryTop from "@/components/VCategoryTop";
 import { debounce } from 'lodash';
 
 export default {
-  components: {VInput, VSelect, VButton, VGoodsList},
+  components: { VCategoryTop, VInput, VSelect, VButton, VGoodsList, VCheckbox },
 
   data() {
     return {
@@ -95,26 +85,26 @@ export default {
       categoryView: true,
 
       uniqueAttrNames: null,
-      selectedFilterCategory: {}
+      selectedFilterCategory: {},
     }
   },
   methods: {
-    optionSelected(option) {
+    optionSelected: function (option) {
       this.selected = option.name
       this.selectValue = option.value
       this.goods = Model.sortGoodsByPrice(option.value, this.goods)
     },
-    toggleCategoryView() {
+    toggleCategoryView: function () {
       this.categoryView = !this.categoryView
     },
     debounceGetGoods: debounce(async function() {
       await this.getGoods()
     }, 1000),
-    async getData() {
+    getData: async function () {
       this.category = await Model.loadSingleCategory(this.id)
     },
-    async getGoods() {
-      const { items, minPrice, maxPrice } = await Model.loadItems(
+    getGoods: async function () {
+      const {items, minPrice, maxPrice} = await Model.loadItems(
           this.id,
           this.selectedFilters,
           this.minPrice,
@@ -126,22 +116,22 @@ export default {
       this.maxItemPrice = maxPrice
 
       this.uniqueAttrNames = Model.getUniqueFilterParameters(this.goods)
-      this.selectedFilterCategory = Object.assign({}, 
-        ...Object.keys(this.uniqueAttrNames)
-        .map(key => ({[key] : []})
-      ))
+      this.selectedFilterCategory = Object.assign({},
+          ...Object.keys(this.uniqueAttrNames)
+              .map(key => ({[key]: []})
+              ))
     },
   },
   computed: {
-    selectedFilters() {
+    selectedFilters: function () {
       return Object.assign(
-        {},
-        ...Object.entries(this.selectedFilterCategory)
-          .filter(([_, value]) => value.length)
-          .map(([key, value]) => ({[key] : value}))
+          {},
+          ...Object.entries(this.selectedFilterCategory)
+              .filter(([_, value]) => value.length)
+              .map(([key, value]) => ({[key]: value}))
       )
     },
-    hasAnyFilter() {
+    hasAnyFilter: function () {
       return !!Object.keys(this.selectedFilters).length
     }
   },
@@ -172,40 +162,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  color: var(--c-white);
-  .icon {
-    fill: var(--c-white);
-    height: 42px;
-    margin-left: 8px;
-  }
-}
-
-.filters-collection {
-  color: #fff
-}
-
-.category-view {
-  span {
-    display: inline-block;
-    margin-left: 16px;
-    cursor: pointer;
-    fill: var(--c-white);
-  }
-
-  .active {
-    color: var(--c-text-dark)
-  }
-}
-.category_top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
 .filter-item {
   margin-bottom: 8px;
 }
@@ -234,12 +190,6 @@ h1 {
   flex-direction: column;
   align-items: flex-start;
   border-radius: 6px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  border-right: 1px solid rgba(255,255,255,0.3);
-  border-left: 1px solid rgba(255,255,255,0.3);
-  border-top: 1px solid rgba(255,255,255,0.4);
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255, 0.1);
 }
 
 .good-item__content {

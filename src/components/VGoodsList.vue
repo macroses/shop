@@ -1,15 +1,17 @@
 <template>
   <ul
-      class="goods-list"
-      :class="[isCategoryList ? 'grid' : 'list']">
+      :class="[isCategoryList ? 'grid' : 'list']"
+      class="goods-list">
     <li
-        class="good-item"
         v-for="good in goods"
-        :key="good.id">
+        :key="good.id"
+        class="good-item">
       <router-link
-          class="good-item__img-link"
-          :to="'/goodItem/' + good.id">
-        <img class="good-img" :src="good.imgSet[0]" alt="">
+          :to="'/goodItem/' + good.id"
+          class="good-item__img-link">
+        <img
+            :src="good.imgSet[0]"
+            alt="" class="good-img">
       </router-link>
       <div class="good-item__content">
         <div class="good-price">{{ good.price }} ₽</div>
@@ -19,6 +21,18 @@
         </router-link>
       </div>
       <v-button>В корзину</v-button>
+      <div class="good_funcs">
+        <span class="add_to_favorite">
+          <svg class="icon">
+            <use xlink:href="/thin.svg#heart-circle-plus"></use>
+          </svg>  
+        </span>
+        <span class="add_to_compare">
+          <svg class="icon">
+            <use xlink:href="/thin.svg#code-compare"></use>
+          </svg>  
+        </span>
+      </div>
     </li>
   </ul>
 </template>
@@ -37,18 +51,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.good_funcs {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  span {
+    cursor: pointer;
+  }
+}
+
+.add_to_favorite {
+  margin-bottom: 16px;
+}
 .good-item {
   padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border-radius: 6px;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  border-right: 1px solid rgba(255,255,255,0.2);
-  border-left: 1px solid rgba(255,255,255,0.2);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px) brightness(150%);
-  background: rgba(255,255,255, 0.1);
+  position: relative;
+  border: 1px solid var(--c-border);
 }
 
 .good-item__content {
@@ -119,7 +144,7 @@ export default {
   font-weight: 600;
   font-size: 18px;
   margin: 8px 0;
-  color: var(--c-white);
+  color: var(--c-text-dark);
 }
 
 .good-name {
@@ -128,6 +153,6 @@ export default {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  color: var(--c-white);
+  color: var(--c-text-dark);
 }
 </style>

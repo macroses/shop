@@ -38,10 +38,10 @@ export default {
     }
   },
   methods: {
-    toggleCatalog() {
+    toggleCatalog: function () {
       this.isVisible = !this.isVisible
     },
-    hideCatalog() {
+    hideCatalog: function () {
       this.isVisible = false
     },
   },
@@ -64,14 +64,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--c-neutral);
+  color: var(--c-text-dark);
   height: 42px;
   padding: 0 16px;
   margin-right: 16px;
   cursor: pointer;
   .icon {
     margin-right: 8px;
-    fill: var(--c-white);
+    fill: var(--c-text-dark);
   }
 }
 
@@ -84,33 +84,29 @@ export default {
 
 .catalog-list {
   position: absolute;
-  background-color: rgba(0,0,0, 0.1);
-  backdrop-filter: blur(4px);
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  border-right: 1px solid rgba(255,255,255,0.3);
-  border-left: 1px solid rgba(255,255,255,0.3);
-  border-top: 1px solid rgba(255,255,255,0.4);
+  background-color: var(--c-white);
+  border: 1px solid var(--c-text);
   top: 100%;
   left: 0;
   border-radius: 6px;
   overflow: hidden;
-  z-index: 10;
+  z-index: 12;
 
   a {
     display: flex;
     align-items: center;
     white-space: nowrap;
     padding: 8px 16px;
-    color: var(--c-white);
+    color: var(--c-text-dark);
     transition: border-left-color 0.3s;
-    border-left: 1px solid transparent;
+    border-left: 3px solid transparent;
     &:hover {
-      border-left-color: rgba(255,255,255, 0.7);
+      border-left-color: rgba(0,0,0, 0.7);
     }
   }
 
   .icon {
-    fill: var(--c-white);
+    fill: var(--c-text-dark);
   }
 }
 

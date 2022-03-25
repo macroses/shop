@@ -2,6 +2,11 @@
   <div class="funcs">
     <router-link to="/favorite">
       <svg class="icon">
+        <use xlink:href="/thin.svg#brightness"></use>
+      </svg>
+    </router-link>
+    <router-link to="/favorite">
+      <svg class="icon">
         <use xlink:href="/thin.svg#heart"></use>
       </svg>
     </router-link>
@@ -41,15 +46,15 @@ a {
   transition: 0.3s;
   border-radius: 6px;
   &:hover {
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    border-right: 1px solid rgba(255,255,255,0.3);
-    border-left: 1px solid rgba(255,255,255,0.3);
-    border-top: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0,0,0,0.3);
+    border-left: 1px solid rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(0,0,0,0.4);
   }
 }
 
 .icon {
-  fill: var(--c-white);
+  fill: var(--c-text-dark);
   transition: 0.3s;
 }
 </style>

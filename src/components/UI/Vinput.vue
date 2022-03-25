@@ -23,19 +23,14 @@ export default {
 input {
   width: 100%;
   padding: 8px;
-  color: var(--c-white);
+  color: var(--c-text-dark);
   transition: border-color 0.3s;
-  background: rgba(255,255,255, 0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  border-right: 1px solid rgba(255,255,255,0.3);
-  border-left: 1px solid rgba(255,255,255,0.3);
-  border-top: 1px solid rgba(255,255,255,0.4);
-  backdrop-filter: blur(10px);
   border-radius: 6px;
   outline: 0;
+  border: 1px solid var(--c-text);
 
   &::placeholder {
-    color: rgba(255,255,255, 0.3);
+    color: rgba(0,0,0, 0.3);
   }
 }
 

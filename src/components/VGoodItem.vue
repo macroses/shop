@@ -33,7 +33,7 @@ export default {
     }
   },
   methods: {
-    toggleFavorite() {
+    toggleFavorite: function () {
       this.isFavorite = !this.isFavorite
     }
   },
@@ -49,19 +49,8 @@ export default {
     font-weight: 600;
     margin: 32px 0 16px;
 
-    background: linear-gradient(to right, var(--c-text), var(--c-text-dark));
     background-size: 200% auto;
     color: var(--c-text);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: shine 5s linear infinite;
-    @keyframes shine {
-      to {
-        background-position: 200% center;
-      }
-    }
   }
 
   .add_to_favorite {

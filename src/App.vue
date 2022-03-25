@@ -1,5 +1,4 @@
 <template>
-  <bubbles />
   <div class="wrapper">
     <v-header></v-header>
     <main>
@@ -7,14 +6,12 @@
     </main>
     <footer>3123123</footer>
   </div>
-
 </template>
 
 <script>
 import VHeader from "@/components/VHeader";
-import Bubbles from "@/components/UI/Bubbles";
 export default {
-  components: {VHeader, Bubbles},
+  components: {VHeader},
 }
 </script>
 

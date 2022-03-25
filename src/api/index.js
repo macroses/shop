@@ -1,15 +1,13 @@
 import axios from "axios";
 
-const Filters = {
-    categoryId: (arr, id) => {
-        return arr.filter(item => item.categoryId === parseInt(id))
-    },
+const {byPrice, categoryId} = {
+    categoryId: (arr, id) => arr.filter(item => item.categoryId === parseInt(id)),
     byPrice: (arr, min, max) => {
-        if(min && max) return arr.filter(good => good.price >= min && good.price <= max)
+        if (min && max) return arr.filter(good => good.price >= min && good.price <= max)
 
-        if(min) return arr.filter(good => good.price >= min)
+        if (min) return arr.filter(good => good.price >= min)
 
-        if(max) return arr.filter(good => good.price <= max)
+        if (max) return arr.filter(good => good.price <= max)
 
         return arr
     }
@@ -30,8 +28,8 @@ export default class Model {
 
     static async loadItems(id, filters = {}, min, max) {
         let items = await axios("http://localhost:3000/items")
-        items = Filters.categoryId(items.data, id);
-        items = Filters.byPrice(items, min, max)
+        items = categoryId(items.data, id);
+        items = byPrice(items, min, max)
 
         let minPrice = Model.getMinPrice(items)
         let maxPrice = Model.getMaxPrice(items)
@@ -69,15 +67,14 @@ export default class Model {
     static getUniqueFilterParameters(innerArr) {
         const categorySet = new Map();
         innerArr.forEach(good => {
-            
             good.attributes.forEach(goodAttr => {
                 if(!categorySet.has(goodAttr.attrName)) {
                     categorySet.set(goodAttr.attrName, new Set());
                 }
 
-                goodAttr.attrVal.forEach(attr_val => {
+                for (const attr_val of goodAttr.attrVal) {
                     categorySet.get(goodAttr.attrName).add(attr_val)
-                });
+                }
             })
         });
 

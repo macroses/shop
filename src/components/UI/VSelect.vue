@@ -15,8 +15,8 @@
         <li
             v-for="option in options"
             :key="option.value"
-            @click="chooseOption(option)"
-            class="option">
+            class="option"
+            @click="chooseOption(option)">
           {{ option.name }}
         </li>
       </ul>
@@ -44,15 +44,14 @@ export default {
     }
   },
   methods: {
-    chooseOption(option) {
+    chooseOption: function (option) {
       this.$emit('select', option)
-      console.log(option)
     },
-    toggleOptions() {
+    toggleOptions: function () {
       this.isVisible = !this.isVisible
 
     },
-    hideOptions() {
+    hideOptions: function () {
       this.isVisible = false
     }
   },
@@ -73,33 +72,28 @@ export default {
 
 .chosen-value {
   height: 42px;
-  background: rgba(255,255,255, 0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  border-right: 1px solid rgba(255,255,255,0.3);
-  border-left: 1px solid rgba(255,255,255,0.3);
-  border-top: 1px solid rgba(255,255,255,0.4);
-  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   padding: 4px 8px;
   cursor: pointer;
   border-radius: 6px;
-
-  color: var(--c-white);
-
   justify-content: space-between;
+  border: 1px solid var(--c-text);
+  z-index: 11;
+  position: relative;
 }
 
 .options {
   position: absolute;
-  top: 100%;
+  top: calc(100% - 4px);
   left: 0;
+  padding-top: 4px;
   min-width: 100%;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
-  background-color: var(--c-white);
   border: 1px solid var(--c-text);
   border-top: none;
+  background: var(--c-white);
   z-index: 10;
   li {
     cursor: pointer;
@@ -113,7 +107,7 @@ export default {
 }
 
 .icon {
-  fill: var(--c-white);
+  fill: var(--c-text-dark);
 }
 
 .slide-enter-active {
