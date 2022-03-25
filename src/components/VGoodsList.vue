@@ -22,7 +22,7 @@
       </div>
       <v-button>В корзину</v-button>
       <div class="good_funcs">
-        <span class="add_to_favorite">
+        <span class="add_to_favorite" @click="addToFavorites(good.id)">
           <svg class="icon">
             <use xlink:href="/thin.svg#heart-circle-plus"></use>
           </svg>  
@@ -46,6 +46,15 @@ export default {
       type: Array
     },
     isCategoryList: false
+  },
+  methods: {
+    addToFavorites(id) {
+      let favoriteStore = this.$store.state.favorites
+
+      if(favoriteStore.includes(id)) return
+
+      this.$store.commit('addFavorite', id)
+    }
   }
 }
 </script>

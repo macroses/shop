@@ -33,13 +33,6 @@ export default {
       selected: 'Сортировка',
     }
   },
-  methods: {
-    // optionSelected: function (option) {
-    //   this.selected = option.name
-    //   this.selectValue = option.value
-    //   console.log(value)
-    // },
-  }
 }
 </script>
 

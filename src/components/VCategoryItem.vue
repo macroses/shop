@@ -86,6 +86,7 @@ export default {
 
       uniqueAttrNames: null,
       selectedFilterCategory: {},
+      checkedCollection: []
     }
   },
   methods: {
@@ -106,7 +107,7 @@ export default {
     getGoods: async function () {
       const {items, minPrice, maxPrice} = await Model.loadItems(
           this.id,
-          this.selectedFilters,
+          this.checkedCollection,
           this.minPrice,
           this.maxPrice
       )
@@ -133,6 +134,9 @@ export default {
     },
     hasAnyFilter: function () {
       return !!Object.keys(this.selectedFilters).length
+    },
+    checkedCollection() {
+      return Object.values(this.selectedFilters)
     }
   },
   watch: {

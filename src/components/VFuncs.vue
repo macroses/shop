@@ -9,6 +9,7 @@
       <svg class="icon">
         <use xlink:href="/thin.svg#heart"></use>
       </svg>
+      {{ $store.state.favorites.length }}
     </router-link>
     <router-link to="/auth">
       <svg class="icon">
@@ -24,8 +25,20 @@
 </template>
 
 <script>
+
+
+
 export default {
-  name: "v-funcs"
+  name: "v-funcs",
+  computed: {
+    // getFavoriteCounter() {
+    //   console.log(store.state.favoriteCounter);
+    //   return store.state.favoriteCounter.length
+    // }
+  },
+  created() {
+    this.$store.dispatch('addFavorite')
+  }
 }
 </script>
 

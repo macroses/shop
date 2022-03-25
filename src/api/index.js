@@ -26,7 +26,7 @@ export default class Model {
         return newArr[0]
     }
 
-    static async loadItems(id, filters = {}, min, max) {
+    static async loadItems(id, filters, min, max) {
         let items = await axios("http://localhost:3000/items")
         items = categoryId(items.data, id);
         items = byPrice(items, min, max)
@@ -36,7 +36,6 @@ export default class Model {
 
         if(minPrice === Infinity) minPrice = 0
         if(maxPrice === -Infinity) maxPrice = 0
-        // ну тут чето по фильтрам добавим, как раз из категорий приходят фильтры
 
         return {
             items,
@@ -80,8 +79,8 @@ export default class Model {
 
         for(const key of categorySet) {
             categorySet.set(
-              key[0],
-              Array.from(key[1])
+                key[0],
+                Array.from(key[1])
             )
         }
 

@@ -18,7 +18,7 @@
 export default {
   props: {
     value: { type: String },
-    modelValue: { type: Object },
+    modelValue: { type: Array },
   },
   methods: {
     onCheck(value) {
@@ -28,7 +28,6 @@ export default {
       else {
         this.$emit('update:modelValue', [...this.modelValue, value])
       }
-      console.log(this.modelValue);
     }
   }
 }
