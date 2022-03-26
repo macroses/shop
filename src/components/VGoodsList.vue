@@ -22,8 +22,8 @@
       </div>
       <v-button>В корзину</v-button>
       <div class="good_funcs">
-        <span class="add_to_favorite" @click="addToFavorites([good.categoryId, good.id])">
-          <svg class="icon">
+        <span class="add_to_favorite" @click="addToFavorites(good.id)">
+          <svg class="icon" :class="isFavorite ? 'added' : ''">
             <use xlink:href="/thin.svg#heart-circle-plus"></use>
           </svg>  
         </span>
@@ -45,18 +45,12 @@ export default {
     goods: {
       type: Array
     },
-    isCategoryList: false
+    isCategoryList: false,
+    isFavorite: false
   },
   methods: {
     addToFavorites(id) {
-      // пробежаться по массиву
-      // проверить совпадает ли приходящий массив с имеющимся элементом массива
-
-      let favoriteStore = this.$store.state.favorites
-
-      //if(favoriteStore.includes(id)) return
-      // this.$store.state.favorites = this.$store.state.favorites.filter(el => !el[1] !== id[1])
-
+      // this.isFavorite = !this.isFavorite
       this.$store.commit('addFavorite', id)
     }
   }

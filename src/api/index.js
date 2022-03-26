@@ -87,10 +87,20 @@ export default class Model {
         return Object.fromEntries(categorySet.entries())
     }
 
-    static loadFavoriteItems(arr) {
-        dbItems = dbItems.filter(dbItem => arr.forEach(el => dbItem.categoryId === el[0] && dbItem.id === el[1]))
-        // отфильтровать массив вех элементов по наличию в них элементов входного массива
-        const favorites = Model.loadItems(_, _ ,_ , arr)
-        console.log(dbItems)
+    static async loadFavoriteItems(arr) {
+
+        let items = await axios("http://localhost:3000/items")
+        let favoriteItemsCollection = []
+        items.data.forEach(item => {
+            arr.forEach(el => {
+                if (el === item.id) {
+                    item.favorite = true
+                    favoriteItemsCollection = [...favoriteItemsCollection, item]
+                }
+            })
+        })
+
+        console.log(favoriteItemsCollection)
+        return favoriteItemsCollection
     }
 }
