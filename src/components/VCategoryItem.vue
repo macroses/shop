@@ -109,7 +109,7 @@ export default {
           this.id,
           this.checkedCollection,
           this.minPrice,
-          this.maxPrice
+          this.maxPrice,
       )
 
       this.goods = items
