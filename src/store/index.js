@@ -9,8 +9,12 @@ export default createStore({
   },
   mutations: {
     addFavorite(state, favorite) {
-      state.favorites = state.favorites.filter(el => el !== favorite)
-      state.favorites = [...state.favorites, favorite]
+      if(state.favorites.includes(favorite)) {
+        state.favorites.splice(state.favorites.indexOf(favorite), 1)
+      }
+      else {
+        state.favorites = [...state.favorites, favorite]
+      }
     }
   },
   actions: {}

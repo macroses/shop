@@ -22,9 +22,13 @@
       </div>
       <v-button>В корзину</v-button>
       <div class="good_funcs">
-        <span class="add_to_favorite" @click="addToFavorites(good.id)">
-          <svg class="icon" :class="isFavorite ? 'added' : ''">
-            <use xlink:href="/thin.svg#heart-circle-plus"></use>
+        <span
+            class="add_to_favorite"
+            @click="addToFavorites(good.id); good.favorite = !good.favorite">
+          <svg
+              class="icon"
+              :class="{added : good.favorite}">
+            <use :xlink:href="`/thin.svg#${good.favorite ? 'heart-filled' : 'heart-circle-plus'}`"></use>
           </svg>  
         </span>
         <span class="add_to_compare">
@@ -46,11 +50,9 @@ export default {
       type: Array
     },
     isCategoryList: false,
-    isFavorite: false
   },
   methods: {
     addToFavorites(id) {
-      // this.isFavorite = !this.isFavorite
       this.$store.commit('addFavorite', id)
     }
   }
@@ -58,6 +60,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.added {
+  fill: orangered;
+}
+
 .good_funcs {
   position: absolute;
   display: flex;
@@ -80,7 +86,7 @@ export default {
   align-items: flex-start;
   border-radius: 6px;
   position: relative;
-  border: 1px solid var(--c-border);
+  border: 1px solid var(--c-text);
 }
 
 .good-item__content {
