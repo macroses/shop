@@ -28,24 +28,29 @@
             </div>
           </div>
           <div class="filter-item">
-            <ul v-if="uniqueAttrNames" class="filters-collection">
-              <li v-for="[key, value] in Object.entries(uniqueAttrNames)" :key="key">
-                <span>{{key}}</span>
-                <ul>
-                  <li v-for="item in value" :key="item">
-                    <v-checkbox
-                      :value="item"
-                      v-model="selectedFilterCategory[key]"
-                    />
-                  </li>
-                </ul>
-              </li>
-            </ul>
+<!--            <ul v-if="uniqueAttrNames" class="filters-collection">-->
+<!--              <li-->
+<!--                  v-for="[key, value] in Object.entries(uniqueAttrNames)"-->
+<!--                  :key="key"-->
+<!--                  class="filters-collection__item">-->
+<!--                <v-filter-by-attr-->
+<!--                    :title="key"-->
+<!--                    :selected-filter-category="selectedFilterCategory"-->
+<!--                    :value="value"/>-->
+<!--              </li>-->
+<!--            </ul>-->
+            <v-filters-attrs-list
+                :selected-filter-category="selectedFilterCategory"
+                :unique-attr-names="uniqueAttrNames"/>
           </div>
         </div>
 
+<!--        <v-goods-list-->
+<!--            v-if="!hasAnyFilter"-->
+<!--            :goods="goods"-->
+<!--            :is-category-list="categoryView"-->
+<!--        />-->
         <v-goods-list
-            v-if="!hasAnyFilter"
             :goods="goods"
             :is-category-list="categoryView"
         />
@@ -58,14 +63,13 @@
 import Model from "@/api";
 import VSelect from "@/components/UI/VSelect";
 import VInput from "@/components/UI/Vinput";
-import VCheckbox from "@/components/UI/VCheckbox";
-import VButton from "@/components/UI/VButton";
 import VGoodsList from "@/components/VGoodsList";
 import VCategoryTop from "@/components/VCategoryTop";
-import { debounce } from 'lodash';
+import {debounce} from 'lodash';
+import VFiltersAttrsList from "@/components/VFiltersAttrsList";
 
 export default {
-  components: { VCategoryTop, VInput, VSelect, VButton, VGoodsList, VCheckbox },
+  components: {VFiltersAttrsList, VCategoryTop, VInput, VSelect, VGoodsList},
 
   data() {
     return {
@@ -86,7 +90,8 @@ export default {
 
       uniqueAttrNames: null,
       selectedFilterCategory: {},
-      checkedCollection: []
+      checkedCollection: [],
+      isCurrentFilterOpen: false
     }
   },
   methods: {
@@ -97,6 +102,9 @@ export default {
     },
     toggleCategoryView: function () {
       this.categoryView = !this.categoryView
+    },
+    toggleAccordion() {
+      this.isCurrentFilterOpen = !this.isCurrentFilterOpen
     },
     debounceGetGoods: debounce(async function() {
       await this.getGoods()
@@ -135,9 +143,6 @@ export default {
     hasAnyFilter: function () {
       return !!Object.keys(this.selectedFilters).length
     },
-    checkedCollection() {
-      return Object.values(this.selectedFilters)
-    }
   },
   watch: {
     $route(toR) {
@@ -161,11 +166,13 @@ export default {
       this.getData(),
       this.getGoods()
     ])
+    console.log(this.goods)
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
 .filter-item {
   margin-bottom: 8px;
 }

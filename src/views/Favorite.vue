@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <button @click="toggleCategoryView">вид</button>
+    <VCategoryTop
+        categoryName="Избранное"
+        categoryImage="heart-filled"
+        :categoryViewType="categoryView"
+        @toggle-view="toggleCategoryView"
+    />
     <v-goods-list
         :goods="favoriteItems"
         :is-category-list="categoryView"
@@ -11,10 +16,11 @@
 <script>
 import Model from "@/api";
 import VGoodsList from "@/components/VGoodsList";
+import VCategoryTop from "@/components/VCategoryTop";
 
 export default {
   name: 'favorite',
-  components: {VGoodsList},
+  components: {VGoodsList, VCategoryTop},
   data() {
     return {
       favoriteItems: [],

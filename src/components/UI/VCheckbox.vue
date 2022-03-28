@@ -3,7 +3,6 @@
     <input
         type="checkbox"
         :value="value"
-
         @change="evt => onCheck(evt.target.value)"
     />
 
